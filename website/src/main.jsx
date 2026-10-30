@@ -24,6 +24,7 @@ import './cover-page.css';
 import './story-profile.css';
 import './history-redesign.css';
 import './trust-reasons.css';
+import './mobile-scroll.css';
 
 const pages = [
   { title: 'جلد', chapter: 'پروفایل شرکتی' },
@@ -792,7 +793,8 @@ function App() {
   const [toc, setToc] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [direction, setDirection] = useState('next');
-  const [touchStart, setTouchStart] = useState(null);
+  const touchStart = useRef(null);
+  const leafRef = useRef(null);
   const lastWheelTurn = useRef(0);
 
   const turn = (next) => {
@@ -804,8 +806,21 @@ function App() {
     const onKey = (event) => {
       if (event.key === 'Escape') { setToc(false); if (document.fullscreenElement) document.exitFullscreen?.(); }
       if (toc) return;
-      if (event.target instanceof HTMLInputElement && event.target.type === 'range') return;
-      if (event.target instanceof HTMLElement && event.target.closest('.history-rail-scroll, .process-roadmap') && ['ArrowLeft', 'ArrowRight', 'Home', 'End', ' '].includes(event.key)) return;
+      if (event.target instanceof HTMLElement && event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      if (event.target instanceof HTMLElement && event.target.closest('button, a') && [' ', 'Enter'].includes(event.key)) return;
+      if (event.target instanceof HTMLElement && event.target.closest('.history-rail-scroll, .process-flow-stepper, .process-roadmap') && ['ArrowLeft', 'ArrowRight', 'Home', 'End', ' '].includes(event.key)) return;
+      const leaf = leafRef.current;
+      if (leaf && (getComputedStyle(leaf).overflowY === 'auto' || leaf.scrollHeight > leaf.clientHeight + 1) && ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', ' ', 'Home', 'End'].includes(event.key)) {
+        event.preventDefault();
+        if (event.key === 'Home') leaf.scrollTo({ top: 0 });
+        else if (event.key === 'End') leaf.scrollTo({ top: leaf.scrollHeight });
+        else {
+          const forward = ['ArrowDown', 'PageDown', ' '].includes(event.key) && !(event.key === ' ' && event.shiftKey);
+          const distance = ['ArrowDown', 'ArrowUp'].includes(event.key) ? 48 : leaf.clientHeight * .8;
+          leaf.scrollBy({ top: (forward ? 1 : -1) * distance });
+        }
+        return;
+      }
       if (['ArrowLeft', 'ArrowDown', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); turn(page + 1); }
       if (['ArrowRight', 'ArrowUp', 'PageUp'].includes(event.key)) { event.preventDefault(); turn(page - 1); }
       if (event.key === 'Home') turn(0);
@@ -822,15 +837,28 @@ function App() {
     else await document.documentElement.requestFullscreen?.();
   };
 
-  const handleTouchStart = (event) => setTouchStart(event.target instanceof HTMLElement && event.target.closest('.history-rail-scroll, .process-roadmap') ? null : event.changedTouches[0].clientX);
+  const handleTouchStart = (event) => {
+    touchStart.current = null;
+    if (toc || event.touches.length !== 1) return;
+    if (event.target instanceof Element && event.target.closest('.history-rail-scroll, .process-flow-stepper, .process-roadmap, button, a, input, select, textarea')) return;
+    const touch = event.changedTouches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  };
   const handleTouchEnd = (event) => {
-    if (touchStart === null) return;
-    const delta = event.changedTouches[0].clientX - touchStart;
-    if (Math.abs(delta) > 48) turn(page + (delta < 0 ? 1 : -1));
-    setTouchStart(null);
+    const start = touchStart.current;
+    touchStart.current = null;
+    if (!start || toc) return;
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) turn(page + (deltaX < 0 ? 1 : -1));
   };
   const handleWheel = (event) => {
-    if (event.target instanceof HTMLElement && event.target.closest('.history-rail-scroll, .process-roadmap')) return;
+    if (event.target instanceof Element && event.target.closest('.history-rail-scroll, .process-flow-stepper, .process-roadmap')) return;
+    // A scrollable page keeps vertical wheel input, including at its boundaries.
+    // Turning the catalogue remains available through arrows and horizontal swipes.
+    const leaf = leafRef.current;
+    if (leaf && (getComputedStyle(leaf).overflowY === 'auto' || leaf.scrollHeight > leaf.clientHeight + 1)) return;
     if (Math.abs(event.deltaY) < 28) return;
     const now = Date.now();
     if (now - lastWheelTurn.current < 620) return;
@@ -838,14 +866,14 @@ function App() {
     turn(page + (event.deltaY > 0 ? 1 : -1));
   };
 
-  return <main className="catalog-app" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+  return <main className="catalog-app" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd} onTouchCancel={() => { touchStart.current = null; }}>
     <div className="catalog-topbar">
       <button className="catalog-home" onClick={() => turn(0)} aria-label="رفتن به جلد کاتالوگ"><Logo /><span className="catalog-home-title"><b>کاتالوگ تعاملی</b><small>BAHARTEL · COMPANY PROFILE</small></span></button>
       <div className="catalog-tools"><span className="catalog-edition"><b>{pages[page].chapter}</b><i /> ۱۴۰۵</span><button className="toc-button" onClick={() => setToc(true)}><span className="toc-glyph">☷</span><span>فهرست صفحات</span></button><button className="fullscreen-button" onClick={toggleFullscreen} aria-label={fullscreen ? 'خروج از تمام‌صفحه' : 'نمای تمام‌صفحه'} title={fullscreen ? 'خروج از تمام‌صفحه' : 'نمای تمام‌صفحه'}>{fullscreen ? <Minimize size={16} /> : <Maximize size={16} />}<span>{fullscreen ? 'خروج' : 'ارائه'}</span></button></div>
     </div>
     <div className="catalog-stage" onWheel={handleWheel}>
       <button className="turn-button turn-prev" onClick={() => turn(page - 1)} disabled={page === 0} aria-label="صفحهٔ قبلی" title="صفحهٔ قبلی"><ChevronRight size={21} /><span>قبلی</span></button>
-      <div className={`catalog-leaf turn-${direction}`} key={page}><Spread index={page} />{page !== 10 && <IctMotif index={page} />}</div>
+      <div className={`catalog-leaf turn-${direction}`} key={page} ref={leafRef}><Spread index={page} />{page !== 10 && <IctMotif index={page} />}</div>
       <button className="turn-button turn-next" onClick={() => turn(page + 1)} disabled={page === pages.length - 1} aria-label="صفحهٔ بعدی" title="صفحهٔ بعدی"><span>بعدی</span><ChevronLeft size={21} /></button>
     </div>
     <div className="catalog-bottom">
