@@ -1,0 +1,231 @@
+/* Viewport and touch refinements for the interactive catalogue. */
+.catalog-app {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+}
+
+.catalog-stage,
+.catalog-leaf,
+.paper {
+  min-width: 0;
+}
+
+.paper {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .catalog-app {
+    grid-template-rows: 58px minmax(0, 1fr) 64px;
+  }
+
+  .catalog-topbar,
+  .catalog-bottom {
+    width: calc(100% - 40px);
+  }
+
+  .catalog-stage {
+    min-height: 0;
+    padding-inline: clamp(38px, 6vw, 58px);
+  }
+
+  .catalog-leaf {
+    width: min(1180px, calc(100vw - 116px), calc((100dvh - 142px) * 1.7778));
+    max-height: calc(100dvh - 132px);
+  }
+
+  .catalog-tools > button {
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .catalog-app {
+    grid-template-rows: 52px minmax(0, 1fr) 62px;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .catalog-topbar,
+  .catalog-bottom {
+    width: calc(100% - 24px);
+  }
+
+  .catalog-topbar {
+    min-height: 48px;
+  }
+
+  .catalog-home .catalog-logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .catalog-home .catalog-logo b {
+    font-size: 9px;
+  }
+
+  .catalog-tools > button {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 9px;
+  }
+
+  .catalog-stage {
+    min-height: 0;
+    padding: 0 5px 4px;
+  }
+
+  .catalog-leaf {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    min-height: 0;
+  }
+
+  .paper {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    scroll-padding-block: 16px;
+  }
+
+  .turn-button {
+    width: 38px;
+    min-width: 38px;
+    height: 44px;
+    border-radius: 9px;
+  }
+
+  .turn-prev {
+    right: 2px;
+  }
+
+  .turn-next {
+    left: 2px;
+  }
+
+  .catalog-bottom {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 34px 20px;
+    gap: 0 8px;
+    padding-block: 3px max(3px, env(safe-area-inset-bottom));
+  }
+
+  .catalog-page-context > b {
+    max-width: min(54vw, 270px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 9px;
+  }
+
+  .catalog-progress-track {
+    height: 20px;
+  }
+
+  .catalog-progress-track > input {
+    min-height: 20px;
+  }
+
+  .page-controls button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .paper :is(
+    .page-heading > p,
+    .history-story p,
+    .history-intro p,
+    .history-intro > b,
+    .key-metrics-heading p,
+    .process-roadmap-heading p,
+    .process-node-card p,
+    .project-showcase-heading p,
+    .featured-challenge p,
+    .why-feature-copy > p,
+    .partner-network-heading p,
+    .client-stories-heading p,
+    .principles-heading p,
+    .principle-copy p,
+    .contact-final-heading p
+  ) {
+    font-size: clamp(9px, 2.8vw, 11px);
+    line-height: 1.85;
+  }
+
+  .paper :is(
+    .process-node-card h2,
+    .project-roster-copy > b,
+    .principle-copy h2,
+    .client-sector-title b
+  ) {
+    font-size: clamp(10px, 3vw, 13px);
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 360px) {
+  .catalog-topbar,
+  .catalog-bottom {
+    width: calc(100% - 18px);
+  }
+
+  .catalog-home .catalog-logo b {
+    font-size: 8px;
+  }
+
+  .catalog-tools {
+    gap: 4px;
+  }
+
+  .catalog-tools > button {
+    width: 37px;
+    min-width: 37px;
+  }
+
+  .turn-button {
+    width: 34px;
+    min-width: 34px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .catalog-app {
+    grid-template-rows: 44px minmax(0, 1fr) 49px;
+  }
+
+  .catalog-topbar,
+  .catalog-bottom {
+    width: calc(100% - 28px);
+  }
+
+  .catalog-topbar {
+    min-height: 40px;
+  }
+
+  .catalog-tools > button {
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .catalog-bottom {
+    grid-template-rows: 26px 16px;
+  }
+
+  .catalog-stage {
+    padding-block: 0 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-app,
+  .catalog-stage,
+  .catalog-leaf,
+  .paper {
+    scroll-behavior: auto;
+  }
+}
