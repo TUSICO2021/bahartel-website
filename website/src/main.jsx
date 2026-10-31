@@ -25,6 +25,7 @@ import './story-profile.css';
 import './history-redesign.css';
 import './trust-reasons.css';
 import './mobile-scroll.css';
+import { PortfolioCore, PortfolioOrbits } from './PortfolioArt.jsx';
 
 const pages = [
   { id: 0, title: 'جلد', chapter: 'پروفایل شرکتی' },
@@ -102,15 +103,15 @@ const brands = ['HP', 'Supermicro', 'Fujitsu', 'Cisco', 'Fortinet'];
 const portfolioBrands = [
   { id: 'dell', name: 'Dell', src: '/assets/brand-logos/dell.svg' },
   { id: 'hpe', name: 'HPE', src: '/assets/brand-logos/hpe.svg' },
-  { id: 'lenovo', name: 'Lenovo', wordmark: 'Lenovo' },
+  { id: 'lenovo', name: 'Lenovo', src: '/assets/brand-logos/lenovo.svg' },
   { id: 'supermicro', name: 'Supermicro', src: '/assets/brand-logos/supermicro.svg' },
-  { id: 'netapp', name: 'NetApp', wordmark: 'netapp' },
-  { id: 'huawei', name: 'Huawei', wordmark: 'HUAWEI' },
+  { id: 'netapp', name: 'NetApp', src: '/assets/brand-logos/netapp.svg' },
+  { id: 'huawei', name: 'Huawei', src: '/assets/brand-logos/huawei.svg' },
   { id: 'cisco', name: 'Cisco', src: '/assets/brand-logos/cisco.svg' },
-  { id: 'juniper', name: 'Juniper (HPE)', wordmark: 'Juniper' },
+  { id: 'juniper', name: 'Juniper (HPE)', src: '/assets/brand-logos/juniper.svg' },
   { id: 'arista', name: 'Arista', src: '/assets/brand-logos/arista.svg' },
   { id: 'fortinet', name: 'Fortinet', src: '/assets/brand-logos/fortinet.svg' },
-  { id: 'nvidia', name: 'NVIDIA', wordmark: 'NVIDIA' },
+  { id: 'nvidia', name: 'NVIDIA', src: '/assets/brand-logos/nvidia.svg' },
 ];
 const pageNumber = (value) => new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2, useGrouping: false }).format(value);
 const persianInteger = (value) => new Intl.NumberFormat('fa-IR', { useGrouping: false }).format(value);
@@ -559,39 +560,73 @@ function PartnerNetworkPage({ index }) {
   </article>;
 }
 
+const portfolioDistributors = [
+  { id: 'aljammaz', name: 'AlJammaz Technologies', mark: 'AlJammaz', sub: 'Technologies' },
+  { id: 'asbis', name: 'ASBIS Middle East', mark: 'ASBIS', sub: 'Middle East' },
+  { id: 'bulwark', name: 'Bulwark Technologies', mark: 'Bulwark', sub: 'Technologies' },
+  { id: 'credence', name: 'Credence Security', mark: 'Credence', sub: 'Security' },
+  { id: 'cyberknight', name: 'CyberKnight', mark: 'CyberKnight', sub: '' },
+  { id: 'fvc', name: 'FVC', mark: 'FVC', sub: '' },
+  { id: 'gulf-software', name: 'Gulf Software Distribution', mark: 'Gulf Software', sub: 'Distribution' },
+  { id: 'hiperdist', name: 'Hiperdist', mark: 'Hiperdist', sub: '' },
+  { id: 'ingram', name: 'Ingram Micro', mark: 'Ingram Micro', sub: '' },
+  { id: 'logicom', name: 'Logicom', mark: 'Logicom', sub: '' },
+  { id: 'metra', name: 'Metra Group', mark: 'Metra', sub: 'Group' },
+  { id: 'mitsumi', name: 'Mitsumi', mark: 'Mitsumi', sub: '' },
+  { id: 'newcom', name: 'Newcom', mark: 'Newcom', sub: '' },
+  { id: 'redington', name: 'Redington Value', mark: 'Redington', sub: 'Value' },
+  { id: 'scope', name: 'SCOPE ME', mark: 'SCOPE ME', sub: '' },
+  { id: 'vad', name: 'VAD Technologies', mark: 'VAD', sub: 'Technologies' },
+  { id: 'westcon', name: 'Westcon Comstor', mark: 'Westcon', sub: 'Comstor' },
+];
+const portfolioBrandAngles = [-90, -58, -28, 22, 56, 78, 111, 140, 158, 208, 242];
+
 function ProductPortfolioPage() {
   const [activeId, setActiveId] = useState('compute');
+  const activeCategory = portfolioCategories.find(({ id }) => id === activeId);
   return <article className="paper portfolio-matrix-paper">
     <div className="portfolio-matrix-layout">
-      <header className="portfolio-matrix-heading"><h1>ماتریس سبد محصولات و خدمات <span dir="ltr">Solutions &amp; Portfolio</span></h1></header>
-      <section className="portfolio-stage" aria-label="دسته‌بندی‌های سبد محصولات و برندهای مرتبط">
-        <div className="portfolio-diagram">
-          <svg className="portfolio-orbit-art" viewBox="0 0 600 600" aria-hidden="true">
-            <defs>
-              <linearGradient id="portfolio-orbit-line" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#d5ed32"/><stop offset=".5" stopColor="#00a651"/><stop offset="1" stopColor="#d5ed32"/></linearGradient>
-            </defs>
-            <circle cx="300" cy="300" r="291" fill="none" stroke="url(#portfolio-orbit-line)" strokeWidth="2"/>
-            <circle className="portfolio-orbit-dashes" cx="300" cy="300" r="281" fill="none" stroke="#d5ed32" strokeOpacity=".65" strokeWidth="2" strokeDasharray="2 13"/>
-            <circle className="portfolio-orbit-route" cx="300" cy="300" r="289" fill="none" stroke="#e8f77a" strokeWidth="4" strokeLinecap="round" strokeDasharray="16 160"/>
+      <header className="portfolio-matrix-heading">
+        <span className="portfolio-eyebrow" dir="ltr">SOLUTIONS &amp; PORTFOLIO</span>
+        <h1>ماتریس سبد محصولات و خدمات</h1>
+        <p>برندهای پیشرو، با پشتوانهٔ شبکهٔ توزیع و تأمین</p>
+      </header>
+      <section className="portfolio-stage" aria-label="سبد محصولات و شبکهٔ تأمین بهارتل">
+        <div className="portfolio-support-orbit">
+          <svg className="portfolio-support-art" viewBox="0 0 1000 1000" aria-hidden="true">
+            <circle cx="500" cy="500" r="485" fill="none" stroke="currentColor" strokeWidth=".7"/>
+            <circle cx="500" cy="500" r="461" fill="none" stroke="currentColor" strokeWidth=".6" strokeDasharray="1 10"/>
+            <circle className="portfolio-support-path" cx="500" cy="500" r="485" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="3 26"/>
+            <path d="M500 15V985M15 500H985" fill="none" stroke="currentColor" strokeWidth=".5" strokeDasharray="2 12"/>
           </svg>
-          <div className="portfolio-quadrants">
-            {portfolioCategories.map(({ id, title, english, icon: Icon, brands: brandIds }) => <section className={`portfolio-quadrant portfolio-quadrant-${id} ${activeId === id ? 'is-active' : ''}`} key={id} aria-label={title}>
-              <div className="portfolio-quadrant-content">
-                <button type="button" className="portfolio-category-choice" onClick={() => setActiveId(id)} aria-pressed={activeId === id} aria-label={title}>
-                  <Icon size={22} strokeWidth={1.8}/><b>{id === 'ai' ? 'تجهیزات هوش مصنوعی' : title}</b><small dir="ltr">{english}</small>
-                </button>
-                <div className="portfolio-quadrant-brands" aria-label={`برندهای ${title}`}>
-                  {brandIds.map((brandId) => {
-                    const brand = portfolioBrands.find(({ id }) => id === brandId);
-                    return <figure className={`portfolio-brand-mark portfolio-brand-${brand.id}`} key={brand.id} title={brand.name}>
-                      {brand.src ? <img src={brand.src} alt={brand.name}/> : <span className={`portfolio-brand-wordmark portfolio-wordmark-${brand.id}`}>{brand.wordmark}</span>}
-                    </figure>;
-                  })}
-                </div>
-              </div>
-            </section>)}
+          <h2 className="portfolio-supply-heading"><span dir="ltr">MAIN DISTRIBUTORS</span>پشتوانهٔ شبکهٔ تأمین</h2>
+          <ul className="portfolio-supplier-list" aria-label="توزیع‌کنندگان اصلی تأمین برندها">
+            {portfolioDistributors.map((supplier, i) => {
+              const angle = (i < 9 ? 206 - i * 52 / 8 : -26 + (i - 9) * 52 / 7) * Math.PI / 180;
+              return <li className={`portfolio-supplier supplier-${supplier.id}`} key={supplier.id} aria-label={supplier.name} title={supplier.name} style={{ '--supplier-x': `${50 + Math.cos(angle) * 49}%`, '--supplier-y': `${50 + Math.sin(angle) * 49}%` }}>
+                <span dir="ltr">{supplier.mark}</span>{supplier.sub && <small dir="ltr">{supplier.sub}</small>}
+              </li>;
+            })}
+          </ul>
+        </div>
+        <div className="portfolio-foreground">
+          <div className="portfolio-wheel" data-active={activeId} aria-label="چهار حوزهٔ تخصصی سبد محصولات">
+            <PortfolioOrbits activeId={activeId}/>
+            <PortfolioCore icon={activeCategory.icon}/>
+            <div className="portfolio-category-selector">
+              {portfolioCategories.map(({ id, position, title, icon: Icon }) => <button type="button" key={id} className={`portfolio-category-choice portfolio-category-${position} ${activeId === id ? 'is-active' : ''}`} onClick={() => setActiveId(id)} aria-pressed={activeId === id} aria-label={title}>
+                <span className="portfolio-category-icon"><Icon size={23} strokeWidth={1.65}/></span><b>{title}</b>
+              </button>)}
+            </div>
           </div>
-          <div className="portfolio-center" aria-hidden="true"><img src="/assets/image39.png" alt=""/></div>
+          <div className="portfolio-brand-orbit" aria-label="برندهای سبد محصولات">
+            {portfolioBrands.map((brand, i) => {
+              const angle = portfolioBrandAngles[i] * Math.PI / 180;
+              return <figure className={`portfolio-brand-mark portfolio-brand-${brand.id} ${activeCategory.brands.includes(brand.id) ? 'is-associated' : ''}`} key={brand.id} data-brand={brand.id} title={brand.name} style={{ '--brand-x': `${50 + Math.cos(angle) * 43}%`, '--brand-y': `${50 + Math.sin(angle) * 43}%`, '--brand-delay': `${i * -.65}s` }}>
+                <img src={brand.src} alt={brand.name}/><figcaption dir="ltr">{brand.name}</figcaption>
+              </figure>;
+            })}
+          </div>
         </div>
       </section>
     </div>

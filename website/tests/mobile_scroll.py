@@ -48,13 +48,14 @@ class MobileScrollTests(unittest.TestCase):
         cls.server.server_close()
         cls.thread.join()
 
-    def open_page(self, width=390, height=844, mobile=True):
+    def open_page(self, width=390, height=844, mobile=True, freeze_animation=True):
         page = self.browser.new_page(viewport={'width': width, 'height': height}, is_mobile=mobile, has_touch=mobile, reduced_motion='reduce')
         self.addCleanup(page.close)
         # Deterministic offline check: external fonts are optional.
         page.route('https://fonts.googleapis.com/**', lambda route: route.fulfill(status=200, content_type='text/css', body=''))
         page.goto(self.url, wait_until='networkidle')
-        page.add_style_tag(content='*,*::before,*::after{animation:none!important;transition:none!important}')
+        if freeze_animation:
+            page.add_style_tag(content='*,*::before,*::after{animation:none!important;transition:none!important}')
         return page
 
     def swipe(self, target, start, end):
@@ -113,48 +114,59 @@ class MobileScrollTests(unittest.TestCase):
         self.assertEqual(page.locator('.catalog-page-context>b').inner_text(), 'تماس')
         self.assertEqual(page.locator('.folio').inner_text(), '۰۹')
 
-    def test_portfolio_logos_stay_in_their_quadrants(self):
+    def test_portfolio_brand_and_supplier_orbits(self):
         groups = {
             'compute': ['dell', 'hpe', 'lenovo', 'supermicro'],
             'storage': ['dell', 'hpe', 'netapp', 'huawei'],
             'network': ['cisco', 'juniper', 'arista', 'huawei', 'fortinet'],
             'ai': ['dell', 'supermicro', 'hpe', 'lenovo', 'nvidia'],
         }
+        suppliers = ['AlJammaz Technologies', 'ASBIS Middle East', 'Bulwark Technologies',
+            'Credence Security', 'CyberKnight', 'FVC', 'Gulf Software Distribution',
+            'Hiperdist', 'Ingram Micro', 'Logicom', 'Metra Group', 'Mitsumi', 'Newcom',
+            'Redington Value', 'SCOPE ME', 'VAD Technologies', 'Westcon Comstor']
         for width, height in [(1440, 1000), (1024, 768), (390, 844), (320, 568), (844, 390)]:
             with self.subTest(width=width, height=height):
                 page = self.open_page(width, height, mobile=width < 1025)
                 for _ in range(7): page.keyboard.press('ArrowLeft')
                 self.assertEqual(page.locator('.portfolio-detail-panel').count(), 0)
-                self.assertEqual(page.locator('.portfolio-quadrant').count(), 4)
-                circle = page.locator('.portfolio-diagram').bounding_box()
+                self.assertEqual(page.locator('.portfolio-category-choice').count(), 4)
+                self.assertEqual(page.locator('.portfolio-brand-mark').count(), 11)
+                self.assertEqual(page.locator('.portfolio-supplier').evaluate_all('els=>els.map(e=>e.getAttribute("aria-label"))'), suppliers)
+                circle = page.locator('.portfolio-wheel').bounding_box()
                 self.assertAlmostEqual(circle['width'], circle['height'], places=1)
-                stage = page.locator('.portfolio-stage').bounding_box()
-                self.assertAlmostEqual(circle['x'] + circle['width']/2, stage['x'] + stage['width']/2, delta=1)
+                foreground = page.locator('.portfolio-foreground').bounding_box()
+                self.assertAlmostEqual(circle['x'] + circle['width']/2, foreground['x'] + foreground['width']/2, delta=1)
                 for category, brands in groups.items():
-                    group = page.locator(f'.portfolio-quadrant-{category}')
-                    self.assertEqual(group.locator('.portfolio-brand-mark').count(), len(brands))
-                    for brand in brands:
-                        self.assertEqual(group.locator(f'.portfolio-brand-{brand}').count(), 1)
-                    group.locator('button').click()
-                    self.assertEqual(group.locator('button').get_attribute('aria-pressed'), 'true')
-                errors = page.locator('.portfolio-brand-mark img, .portfolio-brand-wordmark').evaluate_all('''els => {
-                    const b=document.querySelector('.portfolio-diagram').getBoundingClientRect(), cx=b.x+b.width/2, cy=b.y+b.height/2, radius=b.width/2;
-                    const errors=els.flatMap(el=>{
-                        const r=el.getBoundingClientRect(), q=el.closest('.portfolio-quadrant').getBoundingClientRect();
-                        const outsideQuarter=r.top<q.top-1||r.bottom>q.bottom+1||r.left<q.left-1||r.right>q.right+1;
-                        const outsideCircle=[[r.left,r.top],[r.right,r.top],[r.left,r.bottom],[r.right,r.bottom]].some(([x,y])=>Math.hypot(x-cx,y-cy)>radius+1);
-                        const broken=el.tagName==='IMG'&&(!el.complete||el.naturalWidth===0);
-                        return outsideQuarter||outsideCircle||broken ? [el.alt||el.innerText] : [];
-                    });
-                    for (const title of document.querySelectorAll('.portfolio-category-choice>b')) {
-                        const range=document.createRange(); range.selectNodeContents(title);
-                        for (const r of range.getClientRects()) {
-                            if ([[r.left,r.top],[r.right,r.top],[r.left,r.bottom],[r.right,r.bottom]].some(([x,y])=>Math.hypot(x-cx,y-cy)>radius+1)) errors.push(title.innerText);
-                        }
-                    }
-                    return errors;
-                }''')
+                    button = page.locator(f'.portfolio-category-choice[aria-label="{ {"compute":"زیرساخت‌های پردازشی", "storage":"ذخیره‌سازی و پشتیبان‌گیری", "network":"تجهیزات شبکه", "ai":"زیر ساخت تجهیزات هوش مصنوعی"}[category] }"]')
+                    button.click()
+                    self.assertEqual(button.get_attribute('aria-pressed'), 'true')
+                    self.assertCountEqual(page.locator('.portfolio-brand-mark.is-associated').evaluate_all('els=>els.map(e=>e.dataset.brand)'), brands)
+                errors = page.locator('.portfolio-brand-mark').evaluate_all('els=>{const b=document.querySelector(".portfolio-wheel").getBoundingClientRect(), cx=b.x+b.width/2, cy=b.y+b.height/2, r=b.width/2;return els.flatMap(el=>{const q=el.getBoundingClientRect(),img=el.querySelector("img"),v=document.querySelector(".portfolio-foreground").getBoundingClientRect();const outside=q.left<v.left-1||q.right>v.right+1||q.top<v.top-1||q.bottom>v.bottom+1;const inside=Math.hypot(q.x+q.width/2-cx,q.y+q.height/2-cy)<r;return outside||inside||!img.complete||!img.naturalWidth?[el.dataset.brand]:[]})}')
                 self.assertEqual(errors, [])
+                self.assertEqual(page.locator('.portfolio-energy-a').evaluate('el=>getComputedStyle(el).animationName'), 'none')
+                self.assertEqual(page.locator('.portfolio-digital-core>svg').evaluate('el=>getComputedStyle(el).animationName'), 'none')
+                if width > 1024:
+                    outer = page.locator('.portfolio-support-orbit').bounding_box()
+                    self.assertGreater(outer['width'], circle['width'] * 2)
+                else:
+                    page.locator('.catalog-leaf').evaluate('el=>el.scrollTop=el.scrollHeight')
+                    last = page.locator('.portfolio-supplier').last.bounding_box()
+                    leaf = page.locator('.catalog-leaf').bounding_box()
+                    self.assertLessEqual(last['y']+last['height'],leaf['y']+leaf['height']+1)
+
+    def test_portfolio_animation_respects_reduced_motion(self):
+        page = self.open_page(1440, 1000, mobile=False, freeze_animation=False)
+        for _ in range(7): page.keyboard.press('ArrowLeft')
+        energy = page.locator('.portfolio-energy-a')
+        self.assertEqual(energy.evaluate('el=>getComputedStyle(el).animationName'), 'none')
+        page.emulate_media(reduced_motion='no-preference')
+        self.assertEqual(energy.evaluate('el=>getComputedStyle(el).animationName'), 'portfolio-ring-turn')
+        start = energy.evaluate('el=>getComputedStyle(el).transform')
+        page.wait_for_timeout(150)
+        self.assertNotEqual(energy.evaluate('el=>getComputedStyle(el).transform'), start)
+        page.emulate_media(reduced_motion='reduce')
+        self.assertEqual(energy.evaluate('el=>getComputedStyle(el).animationName'), 'none')
 
     def test_touch_drag_keyboard_and_page_swipe(self):
         page = self.open_page(390, 700)
