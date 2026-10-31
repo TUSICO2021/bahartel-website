@@ -27,23 +27,15 @@ import './trust-reasons.css';
 import './mobile-scroll.css';
 
 const pages = [
-  { title: 'جلد', chapter: 'پروفایل شرکتی' },
-  { title: 'داستان بهار ارتباط گستر', chapter: 'از سال ۱۳۷۹ تا امروز' },
-  { title: 'داستان بهار ارتباط گستر', chapter: 'از ۱۳۷۹ تا امروز' },
-  { title: 'آمار کلیدی در یک نگاه', chapter: 'شاخص‌های عملکرد' },
-  { title: 'دغدغه‌هایی که برطرف می‌کنیم', chapter: 'دغدغه‌هایی که برطرف می‌کنیم' },
-  { title: 'چهار اصل که ما را متمایز می‌کند:', chapter: 'چهار اصل که ما را متمایز می‌کند:' },
-  { title: 'انچه که بهارتل به آن افتخار میکند', chapter: 'انچه که بهارتل به آن افتخار میکند' },
-  { title: 'مسیری که در تامین تجهیزات بهارتل با شما همراه می شود', chapter: 'از نیازسنجی تا تحویل' },
-  { title: 'پروژه‌های موفق', chapter: 'نمونه‌هایی از تأمین' },
-  { title: 'ماتریس سبد محصولات و خدمات', chapter: 'Solutions & Portfolio' },
-  { title: 'چرا مشتریان بهار را انتخاب می‌کنند؟', chapter: 'پنج محور اعتماد' },
-  { title: 'شبکهٔ همکاران و مشتریان', chapter: 'برندها، توزیع‌کنندگان و Success Stories' },
-  { title: 'زیرساخت فنی', chapter: 'تجهیزات و راهکارها' },
-  { title: 'همراهی پس از تحویل', chapter: 'پشتیبانی و توسعه' },
-  { title: 'حوزه‌های مشتریان', chapter: 'دامنه فعالیت' },
-  { title: 'برندها', chapter: 'شبکه تأمین' },
-  { title: 'تماس', chapter: 'ارتباط با بهار' },
+  { id: 0, title: 'جلد', chapter: 'پروفایل شرکتی' },
+  { id: 2, title: 'داستان بهار ارتباط گستر', chapter: 'از ۱۳۷۹ تا امروز' },
+  { id: 3, title: 'آمار کلیدی در یک نگاه', chapter: 'شاخص‌های عملکرد' },
+  { id: 4, title: 'دغدغه‌هایی که برطرف می‌کنیم', chapter: 'دغدغه‌هایی که برطرف می‌کنیم' },
+  { id: 5, title: 'چهار اصل که ما را متمایز می‌کند:', chapter: 'چهار اصل که ما را متمایز می‌کند:' },
+  { id: 7, title: 'مسیری که در تامین تجهیزات بهارتل با شما همراه می شود', chapter: 'از نیازسنجی تا تحویل' },
+  { id: 8, title: 'پروژه‌های موفق', chapter: 'نمونه‌هایی از تأمین' },
+  { id: 9, title: 'ماتریس سبد محصولات و خدمات', chapter: 'Solutions & Portfolio' },
+  { id: 16, title: 'تماس', chapter: 'ارتباط با بهار' },
 ];
 
 const values = [
@@ -567,125 +559,52 @@ function PartnerNetworkPage({ index }) {
   </article>;
 }
 
-function ProductPortfolioPage({ index }) {
+function ProductPortfolioPage() {
   const [activeId, setActiveId] = useState('compute');
-  const activeCategory = portfolioCategories.find(({ id }) => id === activeId) || portfolioCategories[0];
-  const ActiveIcon = activeCategory.icon;
-  const activeBrands = activeCategory.brands.map((id) => portfolioBrands.find((brand) => brand.id === id)).filter(Boolean);
   return <article className="paper portfolio-matrix-paper">
     <div className="portfolio-matrix-layout">
-      <header className="portfolio-matrix-heading"><h1>ماتریس سبد محصولات و خدمات <span dir="ltr">(Solutions &amp; Portfolio)</span></h1></header>
-      <section className="portfolio-stage">
-        <div className="portfolio-diagram" aria-label="دسته‌بندی‌های سبد محصولات و برندهای مرتبط">
+      <header className="portfolio-matrix-heading"><h1>ماتریس سبد محصولات و خدمات <span dir="ltr">Solutions &amp; Portfolio</span></h1></header>
+      <section className="portfolio-stage" aria-label="دسته‌بندی‌های سبد محصولات و برندهای مرتبط">
+        <div className="portfolio-diagram">
           <svg className="portfolio-orbit-art" viewBox="0 0 600 600" aria-hidden="true">
             <defs>
-              <radialGradient id="portfolio-orbit-glow"><stop stopColor="#cce83a" stopOpacity=".48"/><stop offset=".52" stopColor="#00a651" stopOpacity=".12"/><stop offset="1" stopColor="#00a651" stopOpacity="0"/></radialGradient>
-              <linearGradient id="portfolio-orbit-line" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#cde735"/><stop offset=".5" stopColor="#00a651"/><stop offset="1" stopColor="#0a7243"/></linearGradient>
-              <pattern id="portfolio-orbit-grid" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0V18" fill="none" stroke="#7dbd8a" strokeOpacity=".13" strokeWidth=".7"/></pattern>
+              <linearGradient id="portfolio-orbit-line" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#d5ed32"/><stop offset=".5" stopColor="#00a651"/><stop offset="1" stopColor="#d5ed32"/></linearGradient>
             </defs>
-            <circle cx="300" cy="300" r="246" fill="url(#portfolio-orbit-glow)"/>
-            <circle cx="300" cy="300" r="237" fill="none" stroke="#72b85f" strokeOpacity=".18" strokeWidth="1" strokeDasharray="1 7" className="portfolio-orbit-dashes"/>
-            <circle cx="300" cy="300" r="218" fill="none" stroke="url(#portfolio-orbit-line)" strokeOpacity=".56" strokeWidth="1.5"/>
-            <circle cx="300" cy="300" r="205" fill="none" stroke="#d4e5c9" strokeOpacity=".88" strokeWidth="1" strokeDasharray="2 8" className="portfolio-orbit-dashes portfolio-orbit-dashes-inner"/>
-            <circle cx="300" cy="300" r="176" fill="url(#portfolio-orbit-grid)" stroke="#65ad68" strokeOpacity=".28" strokeWidth="1"/>
-            <circle cx="300" cy="300" r="139" fill="none" stroke="#1d8c55" strokeOpacity=".3" strokeWidth="1" strokeDasharray="3 8"/>
-            <path className="portfolio-orbit-route" d="M300 95 A205 205 0 0 1 505 300 M505 300 A205 205 0 0 1 300 505 M300 505 A205 205 0 0 1 95 300 M95 300 A205 205 0 0 1 300 95" fill="none" stroke="url(#portfolio-orbit-line)" strokeWidth="4" strokeLinecap="round" strokeDasharray="4 23"/>
-            <path d="M300 142V223M458 300H377M300 458V377M142 300H223" fill="none" stroke="#178650" strokeOpacity=".28" strokeWidth="1.2" strokeDasharray="3 6"/>
-            <g className="portfolio-orbit-nodes"><circle cx="300" cy="95" r="5"/><circle cx="505" cy="300" r="5"/><circle cx="300" cy="505" r="5"/><circle cx="95" cy="300" r="5"/></g>
-            <circle className="portfolio-orbit-pulse" cx="300" cy="95" r="11" fill="none" stroke="#00a651" strokeWidth="1.4"/>
-            <circle className="portfolio-orbit-pulse portfolio-orbit-pulse-delay" cx="505" cy="300" r="11" fill="none" stroke="#c5de37" strokeWidth="1.4"/>
+            <circle cx="300" cy="300" r="291" fill="none" stroke="url(#portfolio-orbit-line)" strokeWidth="2"/>
+            <circle className="portfolio-orbit-dashes" cx="300" cy="300" r="281" fill="none" stroke="#d5ed32" strokeOpacity=".65" strokeWidth="2" strokeDasharray="2 13"/>
+            <circle className="portfolio-orbit-route" cx="300" cy="300" r="289" fill="none" stroke="#e8f77a" strokeWidth="4" strokeLinecap="round" strokeDasharray="16 160"/>
           </svg>
-          <div className="portfolio-category-ring" aria-hidden="true" />
-          <div className="portfolio-category-selector">
-            {portfolioCategories.map(({ id, position, title, icon: Icon }) => <button type="button" key={id} className={`portfolio-category-choice portfolio-category-${position} ${activeId === id ? 'is-active' : ''}`} onClick={() => setActiveId(id)} aria-pressed={activeId === id} aria-label={title}>
-              <span><Icon size={19} strokeWidth={1.7}/></span><b>{title}</b>
-            </button>)}
+          <div className="portfolio-quadrants">
+            {portfolioCategories.map(({ id, title, english, icon: Icon, brands: brandIds }) => <section className={`portfolio-quadrant portfolio-quadrant-${id} ${activeId === id ? 'is-active' : ''}`} key={id} aria-label={title}>
+              <div className="portfolio-quadrant-content">
+                <button type="button" className="portfolio-category-choice" onClick={() => setActiveId(id)} aria-pressed={activeId === id} aria-label={title}>
+                  <Icon size={22} strokeWidth={1.8}/><b>{id === 'ai' ? 'تجهیزات هوش مصنوعی' : title}</b><small dir="ltr">{english}</small>
+                </button>
+                <div className="portfolio-quadrant-brands" aria-label={`برندهای ${title}`}>
+                  {brandIds.map((brandId) => {
+                    const brand = portfolioBrands.find(({ id }) => id === brandId);
+                    return <figure className={`portfolio-brand-mark portfolio-brand-${brand.id}`} key={brand.id} title={brand.name}>
+                      {brand.src ? <img src={brand.src} alt={brand.name}/> : <span className={`portfolio-brand-wordmark portfolio-wordmark-${brand.id}`}>{brand.wordmark}</span>}
+                    </figure>;
+                  })}
+                </div>
+              </div>
+            </section>)}
           </div>
-          <div className="portfolio-brand-orbit" aria-label="برندهای سبد محصولات">
-            {portfolioBrands.map((brand, i) => {
-              const angle = ((i * 360) / portfolioBrands.length - 90) * Math.PI / 180;
-              const radius = 45;
-              const left = 50 + Math.cos(angle) * radius;
-              const top = 50 + Math.sin(angle) * radius;
-              const associated = activeCategory.brands.includes(brand.id);
-              return <figure className={`portfolio-brand-mark portfolio-brand-${brand.id} ${associated ? 'is-associated' : ''}`} key={brand.id} style={{ left: `${left}%`, top: `${top}%` }} title={brand.name}>
-                {brand.src ? <img src={brand.src} alt={brand.name}/> : <span className={`portfolio-brand-wordmark portfolio-wordmark-${brand.id}`}>{brand.wordmark}</span>}
-                <figcaption>{brand.name}</figcaption>
-              </figure>;
-            })}
-          </div>
+          <div className="portfolio-center" aria-hidden="true"><img src="/assets/image39.png" alt=""/></div>
         </div>
-        <aside className="portfolio-detail-panel" key={`detail-${activeCategory.id}`} aria-live="polite">
-          <div className="portfolio-detail-art" aria-hidden="true">
-            <svg viewBox="0 0 460 190" preserveAspectRatio="xMidYMid meet">
-              <defs>
-                <linearGradient id="portfolio-panel-metal" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#3a8862"/><stop offset=".48" stopColor="#174d39"/><stop offset="1" stopColor="#0b3026"/></linearGradient>
-                <linearGradient id="portfolio-panel-light" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#d5e936"/><stop offset="1" stopColor="#00bd6a"/></linearGradient>
-                <pattern id="portfolio-panel-grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#c4e4a6" strokeOpacity=".12" strokeWidth=".6"/></pattern>
-                <filter id="portfolio-panel-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5"/></filter>
-              </defs>
-              <rect width="460" height="190" rx="18" fill="url(#portfolio-panel-grid)"/>
-              <circle cx="233" cy="90" r="79" fill="#00a651" opacity=".13" filter="url(#portfolio-panel-glow)"/>
-              <path d="M12 42h71l24 23h61m203-29h-54l-22 24h-42M23 151h83l25-23h66m236 21h-66l-21-22h-40" fill="none" stroke="#9dcf63" strokeOpacity=".56" strokeWidth="1.4" strokeDasharray="4 5"/>
-              <g fill="#cce63c"><circle cx="83" cy="42" r="3"/><circle cx="371" cy="36" r="3"/><circle cx="106" cy="151" r="3"/><circle cx="397" cy="149" r="3"/></g>
-              <g transform="translate(174 35)">
-                <rect x="0" y="0" width="116" height="114" rx="12" fill="url(#portfolio-panel-metal)" stroke="#99c962" strokeOpacity=".72"/>
-                <rect x="10" y="12" width="96" height="25" rx="5" fill="#092d25" stroke="#83b95d" strokeOpacity=".6"/>
-                <rect x="10" y="45" width="96" height="25" rx="5" fill="#092d25" stroke="#83b95d" strokeOpacity=".6"/>
-                <rect x="10" y="78" width="96" height="25" rx="5" fill="#092d25" stroke="#83b95d" strokeOpacity=".6"/>
-                <g fill="url(#portfolio-panel-light)"><circle cx="22" cy="24" r="3"/><circle cx="22" cy="57" r="3"/><circle cx="22" cy="90" r="3"/></g>
-                <g stroke="#6fc48b" strokeOpacity=".78" strokeWidth="2" strokeLinecap="round"><path d="M34 24h48m-40 33h56m-48 33h40"/></g>
-                <g fill="#c8df35"><circle cx="94" cy="24" r="2"/><circle cx="94" cy="57" r="2"/><circle cx="94" cy="90" r="2"/></g>
-              </g>
-              <circle className="portfolio-panel-scan" cx="232" cy="91" r="69" fill="none" stroke="#d5e936" strokeOpacity=".26" strokeWidth="1" strokeDasharray="3 7"/>
-            </svg>
-            <span className="portfolio-detail-icon"><ActiveIcon size={25} strokeWidth={1.65}/></span>
-          </div>
-          <div className="portfolio-detail-copy">
-            <h2>{activeCategory.title}</h2>
-            <span className="portfolio-detail-english" dir="ltr"><i/>{activeCategory.english}</span>
-            {activeCategory.body.map((line) => <p key={line}>{line}</p>)}
-          </div>
-          <div className="portfolio-detail-brand-group" aria-label={activeCategory.brandHeading}>
-            <small>{activeCategory.brandHeading}</small>
-            <div className="portfolio-detail-brands">
-              {activeBrands.map(({ id, name, src, wordmark }) => <span className={`portfolio-detail-brand portfolio-detail-brand-${id}`} key={id} title={name}>
-                {src ? <img src={src} alt=""/> : <b>{wordmark}</b>}<small>{name}</small>
-              </span>)}
-            </div>
-          </div>
-        </aside>
       </section>
     </div>
   </article>;
 }
 
 function Spread({ index }) {
-  switch (index) {
+  switch (pages[index].id) {
     case 0: return <article className="paper cover-paper">
       <div className="cover-image"><img src="/assets/image1.png" alt="سرورهای دیتاسنتر" /></div>
       <div className="cover-shade" />
       <div className="cover-brand"><img src="/assets/image39.png" alt="" /></div>
       <div className="cover-copy"><h1><span>معرفی شرکت</span><em>بهار ارتباط گستر</em></h1></div>
-    </article>;
-    case 1: return <article className="paper story-profile-paper">
-      <PageMeta index={index} label="داستان بهار ارتباط گستر" />
-      <div className="story-profile-layout">
-        <header className="story-profile-intro">
-          <h1>داستان بهار ارتباط گستر</h1>
-          <p>از سال ۱۳۷۹ تا امروز، بهار ارتباط گستر مسیری <strong className="story-inline-number">۲۶</strong> ساله را در صنعت IT و زیرساخت دیتاسنتر پیموده است؛ مسیری که در آن <strong className="story-inline-number">۱۲</strong> پروژه بزرگ و ملی به ثمر نشسته و بیش از <strong className="story-inline-number">۱۰۰</strong> میلیون دلار تجهیزات تخصصی به مشتریان این صنعت تأمین شده است.</p>
-        </header>
-        <section className="story-profile-stats" aria-label="۲۶ سال، ۱۲ پروژه بزرگ و ملی، ۱۰۰ میلیون دلار تجهیزات تخصصی">
-          <div className="story-profile-stat"><strong><CountUpNumber value={26} /></strong><span>سال</span></div>
-          <div className="story-profile-stat"><strong><CountUpNumber value={12} /></strong><span>پروژه بزرگ و ملی</span></div>
-          <div className="story-profile-stat"><strong><CountUpNumber value={100} /></strong><span>میلیون دلار تجهیزات تخصصی</span></div>
-        </section>
-        <section className="story-manager-message">
-          <span className="story-manager-label">پیام مدیریت</span>
-          <blockquote>«اعتماد بزرگان این صنعت، سرمایهٔ واقعی ماست و این مسیر را با همان صداقت ادامه خواهیم داد.»</blockquote>
-          <div className="story-manager-byline"><b>مجتبی بختیاری</b><span>مدیرعامل و عضو هیئت‌مدیره</span></div>
-        </section>
-      </div>
     </article>;
     case 2: return <article className="paper history-paper">
       <PageMeta index={index} label="از ۱۳۷۹ تا امروز" />
@@ -701,55 +620,9 @@ function Spread({ index }) {
     </article>;
     case 4: return <PainPointsPage index={index} />;
     case 5: return <PrinciplesDetailPage index={index} />;
-    case 6: return <article className="paper foundation-paper">
-      <PageMeta index={index} label="انچه که بهارتل به آن افتخار میکند" />
-      <div className="foundation-layout">
-        <header className="foundation-heading"><div><span className="section-tag">اصول همکاری</span><h1>انچه که بهارتل به آن <em>افتخار میکند</em></h1></div><i className="foundation-heading-mark" /></header>
-        <div className="foundation-stage">
-          <div className="foundation-value-column foundation-value-column-first">{values.slice(0, 2).map((value) => <FoundationValueCard value={value} key={value.number} />)}</div>
-          <FoundationArtwork />
-          <div className="foundation-value-column foundation-value-column-last">{values.slice(2).map((value) => <FoundationValueCard value={value} key={value.number} />)}</div>
-        </div>
-      </div>
-    </article>;
     case 7: return <ProcessFlowPage index={index} />;
     case 8: return <ProjectShowcasePage index={index} />;
     case 9: return <ProductPortfolioPage index={index} />;
-    case 10: return <WhyChoosePage index={index} />;
-    case 11: return <PartnerNetworkPage index={index} />;
-    case 12: return <article className="paper paper-green">
-      <PageMeta index={index} label="تجهیزات و راهکارها" />
-      <div className="page-heading"><span className="section-tag">پیکربندی متناسب با پروژه</span><h1>زیرساخت <em>فنی</em></h1><p>نوع تجهیز و پیکربندی نهایی با نیاز نرم‌افزاری و زیرساختی پروژه هماهنگ می‌شود.</p></div>
-      <div className="tech-list"><div><span>۰۱</span><div><b>سرورهای سازمانی</b><p>Rack، Tower، Blade و مدل‌های پرتراکم</p><small>HPE ProLiant · Dell EMC PowerEdge</small></div><Cpu /></div><div><span>۰۲</span><div><b>پردازنده و حافظه</b><p>Xeon و EPYC · حافظه سازمانی</p></div><Layers3 /></div><div><span>۰۳</span><div><b>ذخیره‌سازی</b><p>NAS / SAN / All-Flash · SAS / NVMe SSD</p><small>پشتیبان‌گیری و درایوهای سازمانی</small></div><Database /></div><div><span>۰۴</span><div><b>شبکه و ارتباطات</b><p>Core · Spine · Leaf · ToR</p><small>Cisco Nexus / Catalyst · Mellanox · Arista</small></div><Network /></div></div>
-      <section className="infra-visual" aria-label="نمای گرافیکی اجزای زیرساخت">
-        <div className="infra-visual-head"><span>ICT INFRASTRUCTURE</span><i>BAHAR / ۰۴</i></div>
-        <div className="infra-rack">
-          <div className="infra-rack-top"><b>BAHARTEL</b><span><i/> SYSTEM LAYERS</span></div>
-          {[[Server,'پردازش','COMPUTE'],[Layers3,'حافظه','MEMORY'],[Database,'ذخیره‌سازی','STORAGE'],[Network,'شبکه','NETWORK']].map(([Icon, label, en], i) => <div className="infra-rack-unit" key={en}><span className="infra-rack-index">۰{i + 1}</span><Icon size={17}/><b>{label}</b><small>{en}</small><i className="infra-rack-led"/></div>)}
-        </div>
-        <div className="infra-visual-foot"><span>RACK</span><i/><span>DATA</span><i/><span>LINK</span></div>
-      </section>
-      <div className="technical-note">پردازش تخصصی: سرورهای هوش مصنوعی Supermicro؛ جزئیات کانفیگ پروژه در حال تکمیل است.</div>
-    </article>;
-    case 13: return <article className="paper paper-green">
-      <PageMeta index={index} label="گارانتی و پشتیبانی" />
-      <div className="page-heading"><span className="section-tag">چرخهٔ همراهی پس از تحویل</span><h1>همراهی، <em>ادامه دارد</em></h1><p>همکاری ما پس از تحویل پایان نمی‌گیرد.</p></div>
-      <div className="aftercare-grid">{[['۱','تحویل و مستندات','شماره سریال و مدارک گارانتی'],['۲','ثبت و پیگیری','ارجاع درخواست خدمات'],['۳','رسیدگی و پشتیبانی','خدمات مطابق قرارداد'],['۴','ارتقا و توسعه','همراهی در گسترش زیرساخت']].map(([n, title, desc]) => <section key={n}><span>{n}</span><h2>{title}</h2><p>{desc}</p></section>)}</div>
-      <div className="pending-ribbon">زمان پاسخ‌گویی و حدود گارانتی پس از تأیید واحد پشتیبانی درج می‌شود.</div>
-    </article>;
-    case 14: return <article className="paper">
-      <PageMeta index={index} label="دامنهٔ فعالیت" />
-      <div className="page-heading"><span className="section-tag">حوزه‌های مشتریان</span><h1>زیرساخت <em>سازمانی</em></h1><p>گروه‌هایی که در پروفایل شرکت به آن‌ها اشاره شده است.</p></div>
-      <div className="sector-grid">{[['۰۱','بانک‌ها و مؤسسات مالی','خدمات مالی'],['۰۲','اپراتورها و ISPها','شبکه و ارتباطات'],['۰۳','هلدینگ‌های صنعتی','زیرساخت سازمانی'],['۰۴','سازمان‌های دولتی','تجهیزات و خدمات زیرساخت']].map(([n, title, desc]) => <div key={n}><span>{n}</span><b>{title}</b><small>{desc}</small><ArrowUpLeft size={18} /></div>)}</div>
-      <div className="complementary"><div><Radio /><b>ارتباطات مخابراتی</b><span>تجهیزات رادیویی و شبکهٔ بی‌سیم</span></div><div><Boxes /><b>ذخیرهٔ انرژی</b><span>ESS و باتری‌های لیتیومی</span></div><div><Globe2 /><b>مراکز داده</b><span>و سایت‌های مخابراتی</span></div></div>
-      <div className="pending-ribbon">نام مشتریان و دامنهٔ دقیق خدمات پس از تأیید امکان انتشار و تکمیل اطلاعات درج می‌شود.</div>
-    </article>;
-    case 15: return <article className="paper paper-dark">
-      <PageMeta index={index} label="شبکهٔ تأمین" />
-      <div className="page-heading"><span className="section-tag">برندهای ذکرشده در فایل شرکت</span><h1>برندها در <em>شبکهٔ بهار</em></h1><p>نام برندها در فهرست تأمین فایل شرکت آمده است.</p></div>
-      <div className="brand-sheet">{brands.map((brand, i) => <div key={brand}><span>۰{i + 1}</span><b>{brand}</b><ArrowUpLeft size={16} /></div>)}</div>
-      <div className="brand-legal"><ShieldCheck size={18} /><p>ذکر نام برندها به معنی نمایندگی رسمی نیست. فهرست توزیع‌کنندگان اصلی و نوع همکاری هنوز تکمیل نشده است.</p></div>
-    </article>;
     default: return <article className="paper contact-paper">
       <PageMeta index={index} label="گفت‌وگو دربارهٔ پروژهٔ بعدی شما" />
       <div className="contact-orbit" />
@@ -769,11 +642,6 @@ function Spread({ index }) {
 }
 
 function IctMotif({ index }) {
-  const motifs = [
-    [Radio, 'SIGNAL'], [Network, 'NODE'], [Cpu, 'COMPUTE'], [Database, 'DATA'],
-  ];
-  const [First, firstLabel] = motifs[index % motifs.length];
-  const [Second, secondLabel] = motifs[(index + 2) % motifs.length];
   return <div className={`ict-motif motif-${index === 0 ? 'cover' : 'page'}`} aria-hidden="true">
     <svg className="ict-wave" viewBox="0 0 1120 630" preserveAspectRatio="none">
       <defs><linearGradient id="signal-gradient" x1="0" y1="0" x2="1" y2="0"><stop stopColor="#00a651" stopOpacity="0"/><stop offset=".32" stopColor="#00a651" stopOpacity=".7"/><stop offset=".72" stopColor="#cbdf27" stopOpacity=".58"/><stop offset="1" stopColor="#cbdf27" stopOpacity="0"/></linearGradient></defs>
@@ -782,9 +650,6 @@ function IctMotif({ index }) {
       <path className="wave-path wave-signal" d="M-20 518 H130 l22 -32 18 60 25 -91 24 64 23 -35 h90 q40 0 60 -30 t45 -28 t42 30 t46 30 h120 q39 0 55 -20 t40 -20 t43 20 t39 20 h230" />
       <circle className="wave-node node-a" cx="286" cy="500" r="5"/><circle className="wave-node node-b" cx="650" cy="494" r="5"/><circle className="wave-node node-c" cx="966" cy="470" r="5"/>
     </svg>
-    {index !== 2 && <div className="ict-symbol symbol-a"><First size={17} strokeWidth={1.5}/><span>{firstLabel}</span></div>}
-    <div className="ict-symbol symbol-b"><Second size={15} strokeWidth={1.5}/><span>{secondLabel}</span></div>
-    <span className="ict-code">ICT&nbsp; / &nbsp;DATA&nbsp; / &nbsp;NETWORK</span>
   </div>;
 }
 
@@ -873,7 +738,7 @@ function App() {
     </div>
     <div className="catalog-stage" onWheel={handleWheel}>
       <button className="turn-button turn-prev" onClick={() => turn(page - 1)} disabled={page === 0} aria-label="صفحهٔ قبلی" title="صفحهٔ قبلی"><ChevronRight size={21} /><span>قبلی</span></button>
-      <div className={`catalog-leaf turn-${direction}`} key={page} ref={leafRef}><Spread index={page} />{page !== 10 && <IctMotif index={page} />}</div>
+      <div className={`catalog-leaf turn-${direction}`} key={page} ref={leafRef}><Spread index={page} />{pages[page].id !== 9 && <IctMotif index={pages[page].id} />}</div>
       <button className="turn-button turn-next" onClick={() => turn(page + 1)} disabled={page === pages.length - 1} aria-label="صفحهٔ بعدی" title="صفحهٔ بعدی"><span>بعدی</span><ChevronLeft size={21} /></button>
     </div>
     <div className="catalog-bottom">
@@ -882,7 +747,7 @@ function App() {
       <div className="page-controls"><button onClick={() => turn(page - 1)} disabled={page === 0} aria-label="صفحهٔ قبلی"><ArrowRight size={15} /></button><span><b>{pageNumber(page + 1)}</b><i>/</i><small>{pageNumber(pages.length)}</small></span><button onClick={() => turn(page + 1)} disabled={page === pages.length - 1} aria-label="صفحهٔ بعدی"><ArrowLeft size={15} /></button></div>
       <div className="keyboard-hint"><kbd>←</kbd><kbd>→</kbd><span>ورق‌زدن</span></div>
     </div>
-    {toc && <div className="toc-backdrop" onClick={() => setToc(false)}><aside className="toc-panel" dir="rtl" onClick={(event) => event.stopPropagation()}><div className="toc-head"><div><span className="section-tag">راهنمای کاتالوگ · {pageNumber(pages.length)} صفحه</span><h2>فهرست صفحات</h2><p>صفحهٔ {pageNumber(page + 1)} از {pageNumber(pages.length)}</p></div><button className="toc-close" onClick={() => setToc(false)} aria-label="بستن فهرست"><X size={19} /></button></div><div className="toc-list">{pages.map((item, i) => <button className={i === page ? 'toc-active' : ''} key={item.title} onClick={() => { turn(i); setToc(false); }} aria-current={i === page ? 'page' : undefined}><span>{pageNumber(i + 1)}</span><div><b>{item.title}</b><small>{item.chapter}</small></div><ChevronLeft size={16} /></button>)}</div><div className="toc-footer"><Logo /><span>بهار ارتباط گستر · آبان ۱۴۰۵</span></div></aside></div>}
+    {toc && <div className="toc-backdrop" onClick={() => setToc(false)}><aside className="toc-panel" dir="rtl" onClick={(event) => event.stopPropagation()}><div className="toc-head"><div><span className="section-tag">راهنمای کاتالوگ · {pageNumber(pages.length)} صفحه</span><h2>فهرست صفحات</h2><p>صفحهٔ {pageNumber(page + 1)} از {pageNumber(pages.length)}</p></div><button className="toc-close" onClick={() => setToc(false)} aria-label="بستن فهرست"><X size={19} /></button></div><div className="toc-list">{pages.map((item, i) => <button className={i === page ? 'toc-active' : ''} key={item.id} onClick={() => { turn(i); setToc(false); }} aria-current={i === page ? 'page' : undefined}><span>{pageNumber(i + 1)}</span><div><b>{item.title}</b><small>{item.chapter}</small></div><ChevronLeft size={16} /></button>)}</div><div className="toc-footer"><Logo /><span>بهار ارتباط گستر · آبان ۱۴۰۵</span></div></aside></div>}
   </main>;
 }
 

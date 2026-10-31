@@ -15,4 +15,4 @@ The project uses npm and the included package-lock.json to reproduce the validat
 
 ## Mobile scroll regression checks
 
-After `npm run build`, run `python3 tests/mobile_scroll.py` with Python Playwright installed (`python3 -m pip install playwright`; `python3 -m playwright install chromium` if no system Chromium is installed). The checks cover all 17 pages at six portrait/tablet/landscape sizes, native touch and wheel scrolling, nested timeline controls, page navigation, and desktop layout.
+After `npm run build`, run `python3 tests/mobile_scroll.py` with Python Playwright installed (`python3 -m pip install playwright`; `python3 -m playwright install chromium` if no system Chromium is installed). The checks cover all 9 pages at six portrait/tablet/landscape sizes, native touch and wheel scrolling, nested timeline controls, page navigation, and desktop layout.
