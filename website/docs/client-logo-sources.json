@@ -1,0 +1,1094 @@
+{
+  "document": "لوگوهای مشتریان.docx",
+  "rawCompanyRows": 137,
+  "normalizedUniqueFullNames": 121,
+  "uniqueCompanies": 120,
+  "explicitAliasMerge": {
+    "name": "کیان افق هیربد",
+    "alias": "کیان افق هیربد (آیتول)"
+  },
+  "logosAvailable": 0,
+  "clients": [
+    {
+      "id": "client-001",
+      "name": "ارتباطات سیار ایران (همراه اول)",
+      "sourceNames": [
+        "ارتباطات سیار ایران (همراه اول)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-002",
+      "name": "سالارتل",
+      "sourceNames": [
+        "سالارتل"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-003",
+      "name": "مهندسی شبکه گستران آریا سامانه",
+      "sourceNames": [
+        "مهندسی شبکه گستران آریا سامانه"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-004",
+      "name": "مخابرات استان تهران",
+      "sourceNames": [
+        "مخابرات استان تهران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-005",
+      "name": "Etisalat Afghanistan",
+      "sourceNames": [
+        "Etisalat Afghanistan"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-006",
+      "name": "SANET TELECOM",
+      "sourceNames": [
+        "SANET TELECOM"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-007",
+      "name": "Spactron Ltd",
+      "sourceNames": [
+        "Spactron Ltd"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-008",
+      "name": "ارتباطات زیرساخت (TIC)",
+      "sourceNames": [
+        "ارتباطات زیرساخت (TIC)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-009",
+      "name": "فناوری اطلاعات و ارتباطات امن مهیمن",
+      "sourceNames": [
+        "فناوری اطلاعات و ارتباطات امن مهیمن"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-010",
+      "name": "VoipShop",
+      "sourceNames": [
+        "VoipShop"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-011",
+      "name": "بهار سامانه شرق",
+      "sourceNames": [
+        "بهار سامانه شرق"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-012",
+      "name": "مهندسین مشاور ساخت صنعت کاوه (نماینده رسمی شرکت توف اینترنشنال در ایران)",
+      "sourceNames": [
+        "مهندسین مشاور ساخت صنعت کاوه (نماینده رسمی شرکت توف اینترنشنال در ایران)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-013",
+      "name": "پرداخت الکترونیک سامان کیش",
+      "sourceNames": [
+        "پرداخت الکترونیک سامان کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-014",
+      "name": "داده پردازی رسپینا",
+      "sourceNames": [
+        "داده پردازی رسپینا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-015",
+      "name": "ابریشم درخشان آذین",
+      "sourceNames": [
+        "ابریشم درخشان آذین"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-016",
+      "name": "پارسان لین (پارس آنلاین)",
+      "sourceNames": [
+        "پارسان لین (پارس آنلاین)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-017",
+      "name": "سفیر آبی آرام",
+      "sourceNames": [
+        "سفیر آبی آرام"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-018",
+      "name": "فناوران پردیس پاسارگاد قشم",
+      "sourceNames": [
+        "فناوران پردیس پاسارگاد قشم"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-019",
+      "name": "توسعه فناوری ارتباطات پاسارگاد آریان (فناپ تلکام)",
+      "sourceNames": [
+        "توسعه فناوری ارتباطات پاسارگاد آریان (فناپ تلکام)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-020",
+      "name": "ستاره درخشان همراه کیش",
+      "sourceNames": [
+        "ستاره درخشان همراه کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-021",
+      "name": "گسترش ارتباطات تالیا",
+      "sourceNames": [
+        "گسترش ارتباطات تالیا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-022",
+      "name": "صنایع قطعات الکترونیک ایران",
+      "sourceNames": [
+        "صنایع قطعات الکترونیک ایران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-023",
+      "name": "ملی پست جمهوری اسلامی ایران",
+      "sourceNames": [
+        "ملی پست جمهوری اسلامی ایران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-024",
+      "name": "رهیاب رایانه گستر",
+      "sourceNames": [
+        "رهیاب رایانه گستر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-025",
+      "name": "خدمات ارتباطی ایرانسل",
+      "sourceNames": [
+        "خدمات ارتباطی ایرانسل"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-026",
+      "name": "مرکز پیام رعد ایرانیان",
+      "sourceNames": [
+        "مرکز پیام رعد ایرانیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-027",
+      "name": "خدمات ارتباطی رایتل",
+      "sourceNames": [
+        "خدمات ارتباطی رایتل"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-028",
+      "name": "کرانه تک آرمان",
+      "sourceNames": [
+        "کرانه تک آرمان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-029",
+      "name": "موسسه راهکار همراه وسناد",
+      "sourceNames": [
+        "موسسه راهکار همراه وسناد"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-030",
+      "name": "آتیه داده پرداز",
+      "sourceNames": [
+        "آتیه داده پرداز"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-031",
+      "name": "طیف گستراطلس طاها",
+      "sourceNames": [
+        "طیف‏گستراطلس‏طاها"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-032",
+      "name": "سافت سیستم کیش (تیم یار)",
+      "sourceNames": [
+        "سافت سیستم کیش (تیم‏یار)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-033",
+      "name": "آریا سپهر اطلاع رسان تهران (آریاست)",
+      "sourceNames": [
+        "آریا سپهر اطلاع رسان تهران (آریاست)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-034",
+      "name": "بانک شهر",
+      "sourceNames": [
+        "بانک شهر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-035",
+      "name": "مدیریت پندار فناور ایده گستر",
+      "sourceNames": [
+        "مدیریت پندار فناور ایده گستر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-036",
+      "name": "توسعه سامانه های نرم افزاری نگین (توسن)",
+      "sourceNames": [
+        "توسعه سامانه‏های نرم‏افزاری نگین (توسن)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-037",
+      "name": "شرکت فن آوران انیاک کیش",
+      "sourceNames": [
+        "شرکت فن‏آوران‏انیاک‏کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-038",
+      "name": "پایدار ارتباط آرمیتا",
+      "sourceNames": [
+        "پایدار ارتباط آرمیتا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-039",
+      "name": "داده سامانه فن آوا",
+      "sourceNames": [
+        "داده سامانه فن‏آوا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-040",
+      "name": "راهکار سیار هوشمند (راهکارنو)",
+      "sourceNames": [
+        "راهکار سیار هوشمند (راهکارنو)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-041",
+      "name": "همراهان آتیه پاسارگاد",
+      "sourceNames": [
+        "همراهان آتیه پاسارگاد"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-042",
+      "name": "تجارت الکترونیکی ارتباط فردا (فینوتک)",
+      "sourceNames": [
+        "تجارت الکترونیکی ارتباط فردا(فینوتک)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-043",
+      "name": "فن گستران آذر پرسام",
+      "sourceNames": [
+        "فن گستران آذر پرسام"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-044",
+      "name": "شرکت کاله",
+      "sourceNames": [
+        "شرکت کاله"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-045",
+      "name": "بانک سامان",
+      "sourceNames": [
+        "بانک سامان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-046",
+      "name": "آبگینه پرداز شرق",
+      "sourceNames": [
+        "آبگینه پرداز شرق"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-047",
+      "name": "نور رایانه سپهر",
+      "sourceNames": [
+        "نور رایانه سپهر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-048",
+      "name": "امن گستر پیام پرداز",
+      "sourceNames": [
+        "امن گستر پیام پرداز"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-049",
+      "name": "شهر الکترونیک ارمغان آینده",
+      "sourceNames": [
+        "شهر الکترونیک ارمغان آینده"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-050",
+      "name": "اطلاعات ارتباطات شادان",
+      "sourceNames": [
+        "اطلاعات ارتباطات شادان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-051",
+      "name": "همراه افزار راسا",
+      "sourceNames": [
+        "همراه افزار راسا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-052",
+      "name": "هدایتگران آینده روشن",
+      "sourceNames": [
+        "هدایتگران آینده روشن"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-053",
+      "name": "آوا ویانا آرتا",
+      "sourceNames": [
+        "آوا ویانا آرتا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-054",
+      "name": "کلید طلایی جهان معاصر",
+      "sourceNames": [
+        "کلید طلایی جهان معاصر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-055",
+      "name": "ارتباطات گستران کادوس انزلی",
+      "sourceNames": [
+        "ارتباطات گستران کادوس انزلی"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-056",
+      "name": "ارتباطات رنگین کمان آسمان",
+      "sourceNames": [
+        "ارتباطات رنگین کمان آسمان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-057",
+      "name": "فراپیام ساز جام جم",
+      "sourceNames": [
+        "فراپیام‌ساز جام‌جم"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-058",
+      "name": "سازمان شهرداری ها و دهیاری ها",
+      "sourceNames": [
+        "سازمان شهرداری‌ها و دهیاری‌ها"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-059",
+      "name": "فناوری اطلاعات راهبر سداد فارس",
+      "sourceNames": [
+        "فناوری اطلاعات راهبر سداد فارس"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-060",
+      "name": "شهر خودرو",
+      "sourceNames": [
+        "شهر خودرو"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-061",
+      "name": "توسعه ارتباطات همراه شاتل",
+      "sourceNames": [
+        "توسعه ارتباطات همراه شاتل"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-062",
+      "name": "پرداخت اول کیش (جیرینگ)",
+      "sourceNames": [
+        "پرداخت اول کیش (جیرینگ)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-063",
+      "name": "تهران اینترنت (780)",
+      "sourceNames": [
+        "تهران اینترنت (780)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-064",
+      "name": "نرم افزاری امن پرداز (پادویش)",
+      "sourceNames": [
+        "نرم‌افزاری امن‌پرداز (پادویش)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-065",
+      "name": "بیمه ملت",
+      "sourceNames": [
+        "بیمه ملت"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-066",
+      "name": "مبتکران الکترونیک کیش",
+      "sourceNames": [
+        "مبتکران‌الکترونیک‌کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-067",
+      "name": "نگین تجارت آپامه",
+      "sourceNames": [
+        "نگین تجارت آپامه"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-068",
+      "name": "ارتباطات بین المللی تل سی",
+      "sourceNames": [
+        "ارتباطات بین‌المللی تل‌سی"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-069",
+      "name": "مبین وان کیش",
+      "sourceNames": [
+        "مبین‌وان کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-070",
+      "name": "توسعه مدیریت راهبردی امین (انارستان)",
+      "sourceNames": [
+        "توسعه‌مدیریت‌راهبردی‌امین (انارستان)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-071",
+      "name": "سازمان صدا و سیمای جمهوری اسلامی ایران",
+      "sourceNames": [
+        "سازمان صدا و سیمای جمهوری اسلامی ایران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-072",
+      "name": "بیمه دی",
+      "sourceNames": [
+        "بیمه دی"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-073",
+      "name": "تعاونی فناوران توسعه ارتباطات یزد",
+      "sourceNames": [
+        "تعاونی‌فناوران‌توسعه‌ارتباطات‌یزد"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-074",
+      "name": "پارس نت سیس سامانه کیش",
+      "sourceNames": [
+        "پارس‌نت‌سیس سامانه کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-075",
+      "name": "آریا پرداز رایکا",
+      "sourceNames": [
+        "آریا پرداز رایکا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-076",
+      "name": "کیان افق هیربد",
+      "sourceNames": [
+        "کیان افق هیربد",
+        "کیان افق هیربد (آیتول)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-077",
+      "name": "فناوران ایده پرداز صبا (فیلیمو)",
+      "sourceNames": [
+        "فناوران ایده پرداز صبا (فیلیمو)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-078",
+      "name": "هستی آرین تأمین",
+      "sourceNames": [
+        "هستی آرین تأمین"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-079",
+      "name": "رادمان ارتباط نوتریکا",
+      "sourceNames": [
+        "رادمان ارتباط نوتریکا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-080",
+      "name": "بیمه سامان",
+      "sourceNames": [
+        "بیمه سامان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-081",
+      "name": "مؤسسه نیکوکاری رعد الغدیر",
+      "sourceNames": [
+        "مؤسسه نیکوکاری رعد الغدیر"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-082",
+      "name": "ایده گستر ساتراپ تک",
+      "sourceNames": [
+        "ایده‌گستر ساتراپ‌تک"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-083",
+      "name": "ایده سبز همراه",
+      "sourceNames": [
+        "ایده سبز همراه"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-084",
+      "name": "مدیا پرداز سیستم",
+      "sourceNames": [
+        "مدیا پرداز سیستم"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-085",
+      "name": "توسعه مراکز داده ای نوین",
+      "sourceNames": [
+        "توسعه مراکز داده‌ای نوین"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-086",
+      "name": "فاتک افزار پرداز",
+      "sourceNames": [
+        "فاتک افزار پرداز"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-087",
+      "name": "رایا پردازش نوتریکا",
+      "sourceNames": [
+        "رایا پردازش نوتریکا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-088",
+      "name": "رفاه آوران طلوع دانش",
+      "sourceNames": [
+        "رفاه آوران طلوع دانش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-089",
+      "name": "آرمان فناوری هوشمند آریا (تخفیفان)",
+      "sourceNames": [
+        "آرمان‌فناوری‌هوشمند‌آریا (تخفیفان)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-090",
+      "name": "افق گنجینه ایرانیان",
+      "sourceNames": [
+        "افق گنجینه ایرانیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-091",
+      "name": "سرمایه یمین",
+      "sourceNames": [
+        "سرمایه یمین"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-092",
+      "name": "توسعه امن فناوری نامدار",
+      "sourceNames": [
+        "توسعه امن فناوری نامدار"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-093",
+      "name": "کانون جهانگردی و اتومبیلرانی جمهوری اسلامی ایران",
+      "sourceNames": [
+        "کانون جهانگردی و اتومبیلرانی جمهوری اسلامی ایران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-094",
+      "name": "گسترش فناوری فروش هوشمند ویرا",
+      "sourceNames": [
+        "گسترش فناوری فروش هوشمند ویرا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-095",
+      "name": "زند الکترونیک کلارسبز",
+      "sourceNames": [
+        "زند الکترونیک کلارسبز"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-096",
+      "name": "آینده سازان رادین کسب وکار امن",
+      "sourceNames": [
+        "آینده‌سازان رادین کسب‌وکار امن"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-097",
+      "name": "فرابرد داده های ایرانیان",
+      "sourceNames": [
+        "فرابرد داده‌های ایرانیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-098",
+      "name": "نگین بالابر عرشیا",
+      "sourceNames": [
+        "نگین بالابر عرشیا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-099",
+      "name": "راهکار سرزمین هوشمند",
+      "sourceNames": [
+        "راهکار سرزمین هوشمند"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-100",
+      "name": "زیستا صدر سبا",
+      "sourceNames": [
+        "زیستا صدر سبا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-101",
+      "name": "پیشگام رایان داده پژوه",
+      "sourceNames": [
+        "پیشگام رایان داده پژوه"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-102",
+      "name": "ارتباطات هوشمند گوشی سرا",
+      "sourceNames": [
+        "ارتباطات هوشمند گوشی سرا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-103",
+      "name": "گرایش تازه کیش",
+      "sourceNames": [
+        "گرایش تازه کیش"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-104",
+      "name": "موج گستران آداک",
+      "sourceNames": [
+        "موج گستران آداک"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-105",
+      "name": "همراه کسب و کارهای هوشمند (اوانو)",
+      "sourceNames": [
+        "همراه کسب و کارهای هوشمند (اوانو)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-106",
+      "name": "نارپوش منفرد آسیا",
+      "sourceNames": [
+        "نارپوش منفرد آسیا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-107",
+      "name": "کارگزاری رسمی بیمه مستقیم برخط اعتماد ایرانیان (بیمه پارسیان)",
+      "sourceNames": [
+        "کارگزاری رسمی بیمه مستقیم برخط اعتماد ایرانیان (بیمه پارسیان)"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-108",
+      "name": "مؤسسه خدمات رفاهی کارکنان همراه اول",
+      "sourceNames": [
+        "مؤسسه خدمات رفاهی کارکنان همراه اول"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-109",
+      "name": "مهندسی ایده پردازان جهان پژوه",
+      "sourceNames": [
+        "مهندسی ایده‌پردازان جهان پژوه"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-110",
+      "name": "سیستم خبره درسا",
+      "sourceNames": [
+        "سیستم خبره درسا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-111",
+      "name": "صنایع الکترونیک فاران",
+      "sourceNames": [
+        "صنایع الکترونیک فاران"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-112",
+      "name": "تأمین سرمایه لوتوس پارسیان",
+      "sourceNames": [
+        "تأمین سرمایه لوتوس پارسیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-113",
+      "name": "دانشگاه شهید بهشتی",
+      "sourceNames": [
+        "دانشگاه شهید بهشتی"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-114",
+      "name": "خدمات فناوری اطلاعات رفاه ایرانیان",
+      "sourceNames": [
+        "خدمات فناوری اطلاعات رفاه ایرانیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-115",
+      "name": "هونام تجارت پارس",
+      "sourceNames": [
+        "هونام تجارت پارس"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-116",
+      "name": "سروش انرژی پارسیان",
+      "sourceNames": [
+        "سروش انرژی پارسیان"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-117",
+      "name": "مهندسی ایران برنا",
+      "sourceNames": [
+        "مهندسی ایران برنا"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-118",
+      "name": "برید سامانه نوین",
+      "sourceNames": [
+        "برید سامانه نوین"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-119",
+      "name": "بهین صنایع سانا انرژی",
+      "sourceNames": [
+        "بهین صنایع سانا انرژی"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    },
+    {
+      "id": "client-120",
+      "name": "فناوری اطلاعات عصر پاسارگاد",
+      "sourceNames": [
+        "فناوری اطلاعات عصر پاسارگاد"
+      ],
+      "logoStatus": "unavailable",
+      "source": "User-supplied DOCX"
+    }
+  ]
+}
