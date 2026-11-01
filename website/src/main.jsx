@@ -26,6 +26,10 @@ import './history-redesign.css';
 import './trust-reasons.css';
 import './mobile-scroll.css';
 import { PortfolioCore, PortfolioOrbits } from './PortfolioArt.jsx';
+import CoverPage from './CoverPage.jsx';
+import ClientsPage from './ClientsPage.jsx';
+import CloudNetworkPage from './CloudNetworkPage.jsx';
+import './motion-refinements.css';
 
 const pages = [
   { id: 0, title: 'جلد', chapter: 'پروفایل شرکتی' },
@@ -37,6 +41,8 @@ const pages = [
   { id: 8, title: 'پروژه‌های موفق', chapter: 'نمونه‌هایی از تأمین' },
   { id: 9, title: 'ماتریس سبد محصولات و خدمات', chapter: 'Solutions & Portfolio' },
   { id: 16, title: 'تماس', chapter: 'ارتباط با بهار' },
+  { id: 17, title: 'مشتریان بهارتل', chapter: 'کسانی که به بهارتل اعتماد کردند' },
+  { id: 18, title: 'ابر ارتباطی همراه اول', chapter: 'ارتباطات، خدمات و همکاری' },
 ];
 
 const values = [
@@ -59,9 +65,9 @@ const principles = [
 ];
 
 const keyMetrics = [
-  { value: '۲۶', unit: 'سال', label: 'سابقه فعالیت مستمر', desc: 'در صنعت IT و زیرساخت دیتاسنتر (از ۱۳۷۹ تا امروز)', icon: Radio },
-  { value: '۱۲', unit: 'پروژه', label: 'پروژه‌های بزرگ و ملی', desc: 'با اجرای موفق', icon: Network },
-  { value: '۱۰۰', unit: 'میلیون دلار', label: 'ارزش تجهیزات تأمین‌شده', desc: 'برای مشتریان و پروژه‌ها', icon: Boxes },
+  { value: 25, unit: 'سال', label: 'سابقه فعالیت مستمر', desc: 'در صنعت IT و زیرساخت دیتاسنتر (از ۱۳۷۹ تا امروز)', icon: Radio },
+  { value: 12, unit: 'پروژه', label: 'پروژه‌های بزرگ و ملی', desc: 'با اجرای موفق', icon: Network },
+  { value: 100, unit: 'میلیون دلار', label: 'ارزش تجهیزات تأمین‌شده', desc: 'برای مشتریان و پروژه‌ها', icon: Boxes },
   { value: '۵', unit: 'برند معتبر بین‌المللی', label: '(تامین بیش از 1173 سرور)', desc: 'همکاری با', icon: Globe2 },
   { value: '۳', unit: 'ماه', label: 'میانگین زمان تحویل کالا از خارج از کشور', desc: '(از تولید در کارخانه تا ترخیص و تحویل در انبار)', icon: PackageCheck },
 ];
@@ -116,8 +122,9 @@ const portfolioBrands = [
 const pageNumber = (value) => new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2, useGrouping: false }).format(value);
 const persianInteger = (value) => new Intl.NumberFormat('fa-IR', { useGrouping: false }).format(value);
 
-function CountUpNumber({ value, duration = 1850 }) {
+function CountUpNumber({ value, duration = 900 }) {
   const [count, setCount] = useState(0);
+  const elementRef = useRef(null);
   useEffect(() => {
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
       setCount(value);
@@ -125,6 +132,8 @@ function CountUpNumber({ value, duration = 1850 }) {
     }
     let startedAt = null;
     let frameId;
+    let observer;
+    setCount(0);
     const step = (timestamp) => {
       if (startedAt === null) startedAt = timestamp;
       const progress = Math.min((timestamp - startedAt) / duration, 1);
@@ -132,10 +141,19 @@ function CountUpNumber({ value, duration = 1850 }) {
       setCount(Math.round(value * eased));
       if (progress < 1) frameId = requestAnimationFrame(step);
     };
-    frameId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frameId);
+    const start = () => {
+      observer?.disconnect();
+      frameId = requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window && elementRef.current) {
+      observer = new IntersectionObserver((entries) => {
+        if (entries.some(({ isIntersecting }) => isIntersecting)) start();
+      }, { threshold: .25 });
+      observer.observe(elementRef.current);
+    } else start();
+    return () => { observer?.disconnect(); cancelAnimationFrame(frameId); };
   }, [value, duration]);
-  return <span className="story-count" aria-label={persianInteger(value)}>{persianInteger(count)}</span>;
+  return <span className="story-count countup-number" ref={elementRef} data-target={value} data-count-value={count} aria-label={persianInteger(value)}>{persianInteger(count)}</span>;
 }
 
 const historyMilestones = [
@@ -635,12 +653,7 @@ function ProductPortfolioPage() {
 
 function Spread({ index }) {
   switch (pages[index].id) {
-    case 0: return <article className="paper cover-paper">
-      <div className="cover-image"><img src="/assets/image1.png" alt="سرورهای دیتاسنتر" /></div>
-      <div className="cover-shade" />
-      <div className="cover-brand"><img src="/assets/image39.png" alt="" /></div>
-      <div className="cover-copy"><h1><span>معرفی شرکت</span><em>بهار ارتباط گستر</em></h1></div>
-    </article>;
+    case 0: return <CoverPage />;
     case 2: return <article className="paper history-paper">
       <PageMeta index={index} label="از ۱۳۷۹ تا امروز" />
       <HistoryTimeline />
@@ -649,7 +662,7 @@ function Spread({ index }) {
       <PageMeta index={index} label="آمار کلیدی" />
       <div className="keyfacts-layout">
         <header className="keyfacts-heading"><div className="keyfacts-heading-copy"><h1>آمار کلیدی <em>در یک نگاه</em></h1><p className="keyfacts-company-intro">بهار ارتباط گستر، فعال در حوزه فناوری اطلاعات و ارتباطات، با تمرکز بر تأمین تجهیزات زیرساختی دیتاسنتر و سرور، در مسیر پاسخ‌گویی به نیازهای سازمان‌ها و کسب‌وکارهای وابسته به زیرساخت دیجیتال فعالیت می‌کند.</p></div></header>
-        <div className="keyfacts-grid">{keyMetrics.map(({ value, unit, label, desc, icon: Icon }, i) => <article className={`keyfacts-card keyfacts-card-${i + 1}`} key={label}><div className="keyfacts-card-top"><Icon size={22} strokeWidth={1.6}/></div><div className="keyfacts-measure"><b>{value}</b><span>{unit}</span></div><h2>{label}</h2>{i === 3 ? <><p>{desc}</p><div className="keyfacts-brands" aria-label="HP، Supermicro، Fujitsu، Cisco و Fortinet">{['HP','Supermicro','Fujitsu','Cisco','Fortinet'].map((brand) => <span key={brand}>{brand}</span>)}</div></> : <p>{desc}</p>}</article>)}</div>
+        <div className="keyfacts-grid">{keyMetrics.map(({ value, unit, label, desc, icon: Icon }, i) => <article className={`keyfacts-card keyfacts-card-${i + 1}`} key={label}><div className="keyfacts-card-top"><Icon size={22} strokeWidth={1.6}/></div><div className="keyfacts-measure"><b>{i < 3 ? <CountUpNumber value={value}/> : value}</b><span>{unit}</span></div><h2>{label}</h2>{i === 3 ? <><p>{desc}</p><div className="keyfacts-brands" aria-label="HP، Supermicro، Fujitsu، Cisco و Fortinet">{['HP','Supermicro','Fujitsu','Cisco','Fortinet'].map((brand) => <span key={brand}>{brand}</span>)}</div></> : <p>{desc}</p>}</article>)}</div>
         <footer className="keyfacts-outcome"><Sparkles size={21} strokeWidth={1.6}/><p><strong>این مسیر با حمایت برندهای معتبر بین‌المللی شکل گرفته است.</strong> با وجود پیچیدگی‌های واردات و حساسیت این تجهیزات، ماموریت ما به خوبی به نتیجه رسیده و آمار بالا گواه این موضوع است.</p></footer>
       </div>
     </article>;
@@ -658,6 +671,8 @@ function Spread({ index }) {
     case 7: return <ProcessFlowPage index={index} />;
     case 8: return <ProjectShowcasePage index={index} />;
     case 9: return <ProductPortfolioPage index={index} />;
+    case 17: return <ClientsPage index={index} />;
+    case 18: return <CloudNetworkPage index={index} />;
     default: return <article className="paper contact-paper">
       <PageMeta index={index} label="گفت‌وگو دربارهٔ پروژهٔ بعدی شما" />
       <div className="contact-orbit" />
@@ -773,7 +788,7 @@ function App() {
     </div>
     <div className="catalog-stage" onWheel={handleWheel}>
       <button className="turn-button turn-prev" onClick={() => turn(page - 1)} disabled={page === 0} aria-label="صفحهٔ قبلی" title="صفحهٔ قبلی"><ChevronRight size={21} /><span>قبلی</span></button>
-      <div className={`catalog-leaf turn-${direction}`} key={page} ref={leafRef}><Spread index={page} />{pages[page].id !== 9 && <IctMotif index={pages[page].id} />}</div>
+      <div className={`catalog-leaf turn-${direction}`} key={page} ref={leafRef}><Spread index={page} />{![0, 9, 17, 18].includes(pages[page].id) && <IctMotif index={pages[page].id} />}</div>
       <button className="turn-button turn-next" onClick={() => turn(page + 1)} disabled={page === pages.length - 1} aria-label="صفحهٔ بعدی" title="صفحهٔ بعدی"><span>بعدی</span><ChevronLeft size={21} /></button>
     </div>
     <div className="catalog-bottom">

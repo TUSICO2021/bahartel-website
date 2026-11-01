@@ -1,0 +1,61 @@
+{
+  "totalClients": 120,
+  "withSourceMatchedLogo": 8,
+  "withoutSourceMatchedLogo": 112,
+  "allClientNamesFrom": "Uploaded لوگوهای مشتریان.docx",
+  "assets": [
+    {
+      "id": "mci",
+      "file": "/assets/clients/mci.svg",
+      "sourcePackage": "@cyclone9/cpik@0.1.10",
+      "glyph": "telecom-mci",
+      "treatment": "Unmodified glyph outline, normalized SVG viewBox; single brand color"
+    },
+    {
+      "id": "irancell",
+      "file": "/assets/clients/irancell.svg",
+      "sourcePackage": "@cyclone9/cpik@0.1.10",
+      "glyph": "telecom-irancell",
+      "treatment": "Unmodified glyph outline, normalized SVG viewBox; single brand color"
+    },
+    {
+      "id": "rightel",
+      "file": "/assets/clients/rightel.svg",
+      "sourcePackage": "@cyclone9/cpik@0.1.10",
+      "glyph": "telecom-rightel",
+      "treatment": "Unmodified glyph outline, normalized SVG viewBox; single brand color"
+    },
+    {
+      "id": "filimo",
+      "file": "/assets/clients/filimo.svg",
+      "sourcePackage": "@cyclone9/cpik@0.1.10",
+      "glyph": "platform-filimo",
+      "treatment": "Unmodified glyph outline, normalized SVG viewBox; single brand color"
+    },
+    {
+      "id": "post",
+      "file": "/assets/clients/post.svg",
+      "sourcePackage": "@cyclone9/cpik@0.1.10",
+      "glyph": "shipping-post",
+      "treatment": "Unmodified glyph outline, normalized SVG viewBox; single brand color"
+    },
+    {
+      "id": "bank-saman",
+      "file": "/assets/clients/bank-saman.svg",
+      "sourcePackage": "iran-bank-kit@0.1.2"
+    },
+    {
+      "id": "bank-shahr",
+      "file": "/assets/clients/bank-shahr.svg",
+      "sourcePackage": "iran-bank-kit@0.1.2"
+    },
+    {
+      "id": "sep",
+      "file": "/assets/clients/sep.svg",
+      "sourcePackage": "@iran-utils/iranian-banks-icons-core@1.0.4",
+      "export": "SamanKishColorIcon"
+    }
+  ],
+  "pending": "Remaining logo assets may be added later without changing customer coverage.",
+  "displayMode": "Preserve all 8 available customer logos; use the supplied company names for the remaining 112 cards."
+}

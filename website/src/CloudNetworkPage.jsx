@@ -82,6 +82,7 @@ function NameCloud({ node, order }) {
         <path d="M51 111C23 112 9 98 9 79C9 63 18 50 35 47C34 23 55 9 78 14C91 1 119 0 135 16C160 1 191 19 191 44C213 43 231 57 231 77C231 98 215 111 194 111Z" fill={`url(#cloud-fill-${node.id})`} stroke={`url(#cloud-edge-${node.id})`} strokeWidth={featured ? '2.1' : '1.2'}/>
       </svg>
       <div className="cloud-node-content">
+        {node.id === 'mci' && <span className="cloud-mci-logo"><img src="/assets/clients/mci.svg" alt=""/></span>}
         {featured && <span className="cloud-bahar-logo"><img src="/assets/image39.png" alt=""/></span>}
         <div className="cloud-node-copy"><h2>{node.name}</h2>{featured && <span dir="ltr">BAHAR ERTEBAT GOSTAR</span>}</div>
       </div>

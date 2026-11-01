@@ -1,10 +1,11 @@
-// Client names supplied in the uploaded DOCX; duplicates removed in first-seen order.
-// Arabic/Persian character and spacing variants are normalized. Explicit aliases share one entry.
+// Names from the supplied DOCX, deduplicated in first-seen order.
+// Only source-validated, identity-matched logos are assigned; missing marks use company names.
 export const clients = [
   {
     "id": "client-001",
     "name": "ارتباطات سیار ایران (همراه اول)",
-    "displayName": "همراه اول"
+    "displayName": "همراه اول",
+    "logo": "/assets/clients/mci.svg"
   },
   {
     "id": "client-002",
@@ -64,7 +65,8 @@ export const clients = [
   {
     "id": "client-013",
     "name": "پرداخت الکترونیک سامان کیش",
-    "displayName": "پرداخت الکترونیک سامان کیش"
+    "displayName": "پرداخت الکترونیک سامان کیش",
+    "logo": "/assets/clients/sep.svg"
   },
   {
     "id": "client-014",
@@ -114,7 +116,8 @@ export const clients = [
   {
     "id": "client-023",
     "name": "ملی پست جمهوری اسلامی ایران",
-    "displayName": "ملی پست جمهوری اسلامی ایران"
+    "displayName": "ملی پست جمهوری اسلامی ایران",
+    "logo": "/assets/clients/post.svg"
   },
   {
     "id": "client-024",
@@ -124,7 +127,8 @@ export const clients = [
   {
     "id": "client-025",
     "name": "خدمات ارتباطی ایرانسل",
-    "displayName": "خدمات ارتباطی ایرانسل"
+    "displayName": "خدمات ارتباطی ایرانسل",
+    "logo": "/assets/clients/irancell.svg"
   },
   {
     "id": "client-026",
@@ -134,7 +138,8 @@ export const clients = [
   {
     "id": "client-027",
     "name": "خدمات ارتباطی رایتل",
-    "displayName": "خدمات ارتباطی رایتل"
+    "displayName": "خدمات ارتباطی رایتل",
+    "logo": "/assets/clients/rightel.svg"
   },
   {
     "id": "client-028",
@@ -169,7 +174,8 @@ export const clients = [
   {
     "id": "client-034",
     "name": "بانک شهر",
-    "displayName": "بانک شهر"
+    "displayName": "بانک شهر",
+    "logo": "/assets/clients/bank-shahr.svg"
   },
   {
     "id": "client-035",
@@ -224,7 +230,8 @@ export const clients = [
   {
     "id": "client-045",
     "name": "بانک سامان",
-    "displayName": "بانک سامان"
+    "displayName": "بانک سامان",
+    "logo": "/assets/clients/bank-saman.svg"
   },
   {
     "id": "client-046",
@@ -384,7 +391,8 @@ export const clients = [
   {
     "id": "client-077",
     "name": "فناوران ایده پرداز صبا (فیلیمو)",
-    "displayName": "فیلیمو"
+    "displayName": "فیلیمو",
+    "logo": "/assets/clients/filimo.svg"
   },
   {
     "id": "client-078",

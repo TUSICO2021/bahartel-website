@@ -35,13 +35,14 @@ export default function ClientsPage({ index }) {
   const [query, setQuery] = useState('');
   const searchId = useId();
   const galleryRef = useRef(null);
+  const orderedClients = useMemo(() => [...clients].sort((a, b) => Number(Boolean(b.logo)) - Number(Boolean(a.logo))), []);
   const visibleClients = useMemo(() => {
     const terms = normalizeSearch(query).split(' ').filter(Boolean);
-    return terms.length ? clients.filter((client) => {
+    return terms.length ? orderedClients.filter((client) => {
       const name = normalizeSearch(`${client.name} ${client.displayName || ''}`);
       return terms.every((term) => name.includes(term));
-    }) : clients;
-  }, [query]);
+    }) : orderedClients;
+  }, [query, orderedClients]);
 
   useEffect(() => {
     if (galleryRef.current) galleryRef.current.scrollTop = 0;

@@ -1,0 +1,58 @@
+/* Soft propagating waves replace the high-contrast rigid contact circles. */
+.contact-orbit {
+  width: 72%;
+  aspect-ratio: 1;
+  height: auto;
+  top: -35%;
+  right: 6%;
+  border: 1px solid rgba(157,204,114,.065);
+  background: radial-gradient(ellipse,rgba(29,121,81,.07),transparent 68%);
+  opacity: .65;
+  transform: rotate(-18deg) scaleX(1.15);
+  pointer-events: none;
+}
+.contact-orbit:before,.contact-orbit:after {
+  position: absolute;
+  content: '';
+  inset: 10%;
+  border: 1px solid rgba(153,200,103,.13);
+  border-radius: 49% 51% 46% 54% / 48% 44% 56% 52%;
+  box-shadow: none;
+  animation: contact-wave-spread 13s ease-out infinite;
+}
+.contact-orbit:after { animation-delay: -6.5s; border-color: rgba(98,183,137,.12); }
+@keyframes contact-wave-spread {
+  0% { transform: scale(.62) rotate(0); opacity: 0; }
+  28% { opacity: .38; }
+  100% { transform: scale(1.4) rotate(7deg); opacity: 0; }
+}
+.keyfacts-measure>b>.countup-number { font-size: inherit; font-weight: inherit; line-height: inherit; font-family: inherit; }
+.contact-qr-card { flex-direction: column; justify-content: center; gap: 10px; }
+.contact-qr-copy { width: 100%; text-align: center; }
+.contact-qr-copy>small { font-size: 9px; text-align: center; }
+.contact-qr-copy h2 { font-size: clamp(15px,1.4cqw,18px); line-height: 1.6; }
+.contact-qr-copy p { font-size: 11px; line-height: 1.7; }
+.contact-qr-copy>a { font-size: 9px; }
+/* Keep rich card content at its natural height, including on short desktops. */
+.catalog-leaf:has(> .keyfacts-paper),
+.catalog-leaf:has(> .contact-paper) { overflow-x: hidden; overflow-y: auto; overscroll-behavior-y: contain; }
+.catalog-leaf > .keyfacts-paper,
+.catalog-leaf > .contact-paper { display: flow-root; height: auto; min-height: 100%; overflow: visible; padding: 0; }
+.keyfacts-layout { position: relative; inset: auto; margin: 72px 5.6% 32px; grid-template-rows: auto auto auto; }
+.keyfacts-grid { grid-template-rows: repeat(2,minmax(min-content,auto)); }
+.keyfacts-card > * { flex-shrink: 0; }
+.keyfacts-paper .page-meta { top: 27px; inset-inline: 5.6%; }
+.contact-final-layout { position: relative; inset: auto; margin: 100px 7% 38px; grid-template-rows: auto auto auto; }
+.contact-qr-card { min-height: 360px; }
+.contact-paper .page-meta { top: 27px; inset-inline: 7%; }
+@media(max-width:640px) {
+ .keyfacts-layout { margin: 64px 18px 28px; }
+ .keyfacts-grid { grid-template-rows: none; }
+ .keyfacts-paper .page-meta { inset-inline: 18px; }
+ .contact-final-layout { margin: 70px 20px 28px; grid-template-rows: repeat(4,auto); }
+ .contact-paper .page-meta { inset-inline: 20px; }
+}
+@media(max-width:640px) { .contact-orbit { width: 160%; top: -15%; right: -30%; } }
+@media(prefers-reduced-motion:reduce) {
+ .contact-orbit:before,.contact-orbit:after { animation: none; opacity: .2; transform: scale(1.05); }
+}
