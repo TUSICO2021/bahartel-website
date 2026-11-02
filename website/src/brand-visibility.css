@@ -46,3 +46,29 @@
 .project-exact-copy strong { color: #d9ec64; font-weight: 900; }
 .project-exact-content .project-product-photo { margin-bottom: 18px; }
 @media (max-width: 640px) { .project-exact-content { max-height: 76svh; padding: 16px; } .project-exact-copy p { font-size: 14px; } }
+
+/* Fujitsu project editorial layout; supplied copy is preserved verbatim. */
+.project-exact-feature { background: #f6f8f3; border-color: #d3dfd5; box-shadow: 0 12px 28px #163e2912; color: #163d2b; }
+.project-exact-content { padding: 22px; scrollbar-color: #69a77c #e8eee6; }
+.fujitsu-project-header { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding-bottom: 16px; border-bottom: 1px solid #d8e3d9; }
+.fujitsu-project-header>div:first-child { min-width: 0; }
+.fujitsu-eyebrow { color: #4b705c; font-size: 12px; font-weight: 800; }
+.fujitsu-project-header h2 { color: #133c2b; font: 900 clamp(18px,1.9cqw,25px)/1.55 Arial,sans-serif; margin: 7px 0 0; text-align: right; overflow-wrap: anywhere; }
+.fujitsu-project-header .project-exact-brand { flex: none; width: 100px; min-height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; margin: 0; padding: 10px; border-radius: 13px; background: #fff; border: 1px solid #eadcdb; box-shadow: 0 5px 12px #6c302409; }
+.fujitsu-project-header .project-exact-brand img { width: 78px; height: 34px; padding: 0; border-radius: 0; }
+.fujitsu-project-header .project-exact-brand b { color: #d8232e; font: 900 14px/1 Arial,sans-serif; letter-spacing: .08em; }
+.fujitsu-project-title { color: #165f3f; font-size: clamp(20px,2.15cqw,27px); font-weight: 900; line-height: 1.7; margin: 18px 0; }
+.fujitsu-project-metrics { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-bottom: 18px; }
+.fujitsu-metric { min-width: 0; padding: 14px 16px; border: 1px solid #d9e5db; border-top: 3px solid #4f9d70; border-radius: 11px; background: #fff; box-shadow: 0 5px 12px #244a3010; }
+.fujitsu-metric p { margin: 0; color: #355644; font-size: 13px; font-weight: 700; line-height: 1.9; white-space: pre-wrap; }
+.fujitsu-metric strong { display: inline-block; color: #125e3b; font-family: var(--number-font),Tahoma,sans-serif; font-size: 30px; font-weight: 900; line-height: 1.2; padding-inline: 3px; }
+.fujitsu-metric-4 { background: #164d36; border-color: #164d36; border-top-color: #ccdd6e; }
+.fujitsu-metric-4 p { color: #f0f6ec; }
+.fujitsu-metric-4 strong { color: #deed8a; }
+.project-exact-content .fujitsu-hero-photo { border: 1px solid #e1e8df; border-radius: 13px; margin: 0 0 20px; }
+.fujitsu-hero-photo img { height: 210px; }
+.fujitsu-editorial-copy { padding: 20px 21px 4px; background: #fff; border: 1px solid #e0e7df; border-radius: 13px; }
+.project-exact-copy.fujitsu-editorial-copy p, .project-exact-copy.fujitsu-editorial-copy p:first-child { color: #294638; font-size: 16px; font-weight: 400; line-height: 2.15; margin: 0 0 22px; text-align: right; }
+.project-exact-copy.fujitsu-editorial-copy p:last-child { border-right: 3px solid #80ac66; padding: 10px 14px; background: #f3f7ec; border-radius: 6px; }
+.fujitsu-project-model { margin-top: 14px; padding: 12px 15px; border: 1px solid #d9e5db; border-radius: 8px; color: #355d46; background: #ecf2e8; font-size: 13px; white-space: pre-wrap; }
+@media(max-width:640px) { .project-exact-content { padding: 16px; } .fujitsu-project-header { gap: 10px; } .fujitsu-project-header .project-exact-brand { width: 78px; min-height: 70px; } .fujitsu-project-header .project-exact-brand img { width: 60px; } .fujitsu-project-header h2 { font-size: 18px; } .fujitsu-project-title { font-size: 21px; } .fujitsu-metric { padding: 11px; } .fujitsu-metric strong { font-size: 27px; } .fujitsu-editorial-copy { padding: 16px 14px 0; } .project-exact-copy.fujitsu-editorial-copy p { font-size: 15px; line-height: 2.1; } }

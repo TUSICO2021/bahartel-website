@@ -463,9 +463,21 @@ function ProjectShowcasePage({ index }) {
       <div className="project-interaction-grid">
         <article className={`project-interaction-feature ${project.id === '04' ? 'project-exact-feature' : ''}`} key={project.id} aria-live="polite">
           {project.id === '04' ? <section className="project-exact-content" aria-label="متن پروژه فوجیتسو" tabIndex={0}>
-            <div className="project-exact-brand"><img src="/assets/brand-logos/fujitsu.svg" alt="Fujitsu"/></div>
-            {project.image && <figure className="project-product-photo"><img src={project.image} alt="تصویر سرور فوجیتسو ارائه‌شده در فایل پروژه"/></figure>}
-            <div className="project-exact-copy">{fujitsuCopy.map((paragraph, i) => i === 6 ? <p key={i}><strong>{paragraph}</strong></p> : <p key={i}>{paragraph}</p>)}</div>
+            <header className="fujitsu-project-header">
+              <div><span className="fujitsu-eyebrow">{fujitsuCopy[0]}</span><h2 dir="ltr">{fujitsuCopy[5]}</h2></div>
+              <div className="project-exact-brand"><img src="/assets/brand-logos/fujitsu.svg" alt="Fujitsu"/><b>FUJITSU</b></div>
+            </header>
+            <h3 className="fujitsu-project-title">{fujitsuCopy[6]}</h3>
+            <div className="fujitsu-project-metrics">{[1, 2, 3, 4].map((index) => {
+              const match = fujitsuCopy[index].match(/300|36|سه|25/);
+              const offset = match.index;
+              return <div className={`fujitsu-metric fujitsu-metric-${index}`} key={index}>
+                <p>{fujitsuCopy[index].slice(0, offset)}<strong>{match[0]}</strong>{fujitsuCopy[index].slice(offset + match[0].length)}</p>
+              </div>;
+            })}</div>
+            {project.image && <figure className="project-product-photo fujitsu-hero-photo"><img src={project.image} alt="تصویر سرور فوجیتسو ارائه‌شده در فایل پروژه"/></figure>}
+            <div className="project-exact-copy fujitsu-editorial-copy">{fujitsuCopy.slice(7, 12).map((paragraph, i) => <p key={i}>{paragraph}</p>)}</div>
+            <footer className="fujitsu-project-model">{fujitsuCopy[12]}</footer>
           </section> : <>
           <div className="project-interaction-top"><span>پروژهٔ {project.id} از {pageNumber(projects.length)}</span><span>{project.category}</span></div>
           <div className={`project-interaction-main ${project.image ? 'has-product-image' : ''}`}>
