@@ -1,0 +1,405 @@
+/* Brand-green display pass: stronger contrast and color for presentation screens. */
+:root {
+  --green: #00a651;
+  --brand-green-deep: #00783d;
+  --mid: #70bf45;
+  --lime: #d1e323;
+  --line: #c9d9c4;
+  --muted: #66776a;
+}
+
+.catalog-app {
+  background:
+    radial-gradient(ellipse at 50% 43%, rgba(196, 224, 166, .36), transparent 57%),
+    linear-gradient(145deg, #f2f7ed, #e3ecdf 72%);
+}
+
+.catalog-tools > button {
+  border-color: rgba(0, 120, 61, .27);
+  background: rgba(255, 255, 255, .82);
+  color: #185536;
+}
+
+.catalog-tools > button:hover {
+  border-color: var(--green);
+  box-shadow: 0 6px 16px rgba(0, 120, 61, .14);
+}
+
+.catalog-tools .fullscreen-button {
+  border-color: var(--green);
+  background: linear-gradient(135deg, #00a651, #00833f);
+  color: #fff;
+  box-shadow: 0 5px 14px rgba(0, 130, 63, .2);
+}
+
+.catalog-tools .fullscreen-button:hover {
+  background: linear-gradient(135deg, #00b75a, #008a43);
+  color: #fff;
+}
+
+.catalog-tools .fullscreen-button svg {
+  color: #fff;
+}
+
+.toc-glyph,
+.catalog-edition i {
+  color: var(--brand-green-deep);
+}
+
+.catalog-stage .turn-button {
+  border-color: rgba(0, 120, 61, .27);
+  background: rgba(246, 251, 240, .94);
+  color: var(--brand-green-deep);
+}
+
+.catalog-stage .turn-button:hover:not(:disabled) {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 120, 61, .2);
+}
+
+.catalog-progress-track {
+  background: rgba(0, 120, 61, .2);
+}
+
+.catalog-progress-track > span {
+  background: linear-gradient(90deg, #70bf45, #00a651, #00783d);
+  box-shadow: 0 0 10px rgba(0, 166, 81, .42);
+}
+
+.page-controls button:hover:not(:disabled),
+.page-controls > span > b {
+  color: var(--brand-green-deep);
+}
+
+.paper:not(.cover-paper):not(.paper-dark):not(.contact-paper) {
+  background-color: #fdfff9;
+}
+
+.paper:not(.cover-paper):not(.paper-dark):not(.contact-paper)::before {
+  background-image:
+    linear-gradient(90deg, rgba(0, 120, 61, .035) 1px, transparent 1px),
+    linear-gradient(rgba(0, 120, 61, .03) 1px, transparent 1px);
+}
+
+.paper:not(.cover-paper):not(.paper-dark):not(.contact-paper)::after {
+  border-color: rgba(0, 120, 61, .2);
+  border-top: 3px solid var(--green);
+}
+
+.paper.paper-dark::after,
+.paper.contact-paper::after {
+  border-color: rgba(255, 255, 255, .18);
+  border-top-color: var(--lime);
+}
+
+.paper-green {
+  background: linear-gradient(135deg, #f3f9e8, #eaf4dc 72%, #f8faef);
+}
+
+.page-meta {
+  color: #55705b;
+}
+
+.meta-rule {
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--mid));
+  box-shadow: 0 0 8px rgba(0, 166, 81, .28);
+}
+
+.folio {
+  color: var(--brand-green-deep);
+}
+
+.section-tag {
+  color: var(--brand-green-deep);
+  font-weight: 700;
+}
+
+.section-tag::before {
+  width: 7px;
+  height: 7px;
+  box-shadow: 0 0 0 4px rgba(0, 166, 81, .13);
+}
+
+.paper :is(h1, h2) em {
+  color: var(--brand-green-deep);
+}
+
+.paper-dark :is(h1, h2) em,
+.contact-paper :is(h1, h2) em,
+.cover-paper :is(h1, h2) em {
+  color: var(--lime);
+}
+
+.page-footnote {
+  border-top-color: rgba(0, 120, 61, .25);
+  color: #536858;
+}
+
+.page-footnote svg {
+  color: var(--brand-green-deep);
+}
+
+.cover-image img {
+  opacity: .78;
+}
+
+.cover-shade {
+  background:
+    linear-gradient(0deg, rgba(5, 22, 12, .9), rgba(4, 32, 17, .18) 80%),
+    linear-gradient(90deg, rgba(0, 69, 36, .42), transparent 75%);
+}
+
+.cover-bottom {
+  border-top-color: rgba(209, 227, 35, .58);
+}
+
+.about-quote {
+  border-right-color: var(--green);
+  background: linear-gradient(90deg, transparent, rgba(0, 166, 81, .055));
+}
+
+.about-quote > span,
+.value-item > div,
+.value-item > i,
+.process-step > span,
+.domain-item li svg,
+.tech-list > div > svg,
+.complementary svg,
+.sector-grid svg {
+  color: var(--brand-green-deep);
+}
+
+.metrics-grid,
+.value-grid,
+.tech-list,
+.project-grid,
+.aftercare-grid,
+.sector-grid,
+.complementary {
+  border-color: rgba(0, 120, 61, .3);
+}
+
+.metric {
+  border-color: rgba(0, 120, 61, .2);
+  background: linear-gradient(180deg, rgba(0, 166, 81, .045), transparent 72%);
+}
+
+.metric b,
+.project-item > b,
+.key-metric-value > b,
+.featured-project-number > b {
+  color: var(--brand-green-deep);
+}
+
+.metric small,
+.value-item p,
+.process-step p,
+.project-item > small,
+.case-note p,
+.aftercare-grid p,
+.complementary span {
+  color: #536b58;
+}
+
+.value-item,
+.process-step,
+.project-item,
+.aftercare-grid section,
+.sector-grid > div,
+.complementary > div {
+  border-color: rgba(0, 120, 61, .22);
+}
+
+.process-stamp,
+.technical-note {
+  background: linear-gradient(135deg, #e4f2d6, #f2f8e9);
+}
+
+.process-step > span,
+.aftercare-grid section > span,
+.sector-grid > div,
+.project-roster-icon {
+  box-shadow: inset 0 0 0 1px rgba(0, 166, 81, .16);
+}
+
+.project-item > strong,
+.domain-caption,
+.pending-ribbon {
+  color: #4e6753;
+}
+
+.key-metric,
+.process-node-card {
+  border-color: rgba(0, 120, 61, .24);
+  border-top-color: var(--green);
+  background: linear-gradient(155deg, #fff, #f0f8e8);
+  box-shadow: 0 9px 22px rgba(0, 94, 49, .09);
+}
+
+.key-metric:hover,
+.process-node-card:hover {
+  border-color: rgba(0, 166, 81, .55);
+  box-shadow: 0 13px 28px rgba(0, 94, 49, .15);
+}
+
+.delivery-path,
+.key-values {
+  border-color: rgba(0, 120, 61, .25);
+  background: linear-gradient(100deg, rgba(0, 166, 81, .075), rgba(255, 255, 255, .8));
+}
+
+.history-rail-row::before,
+.history-route path {
+  filter: drop-shadow(0 0 3px rgba(0, 166, 81, .3));
+}
+
+.history-year.is-active .history-year-dot,
+.history-year:hover .history-year-dot,
+.history-year:focus-visible .history-year-dot {
+  background: var(--green);
+  border-color: var(--lime);
+  box-shadow: 0 0 0 4px rgba(0, 166, 81, .17), 0 5px 12px rgba(0, 94, 49, .22);
+}
+
+.why-feature,
+.why-reason.is-active,
+.partner-layer,
+.client-sector-card,
+.principle-card,
+.featured-project,
+.project-roster-card,
+.contact-channel,
+.contact-qr-card {
+  border-color: rgba(0, 120, 61, .28);
+}
+
+.why-feature {
+  background: linear-gradient(145deg, #eff8e7, #fff 80%);
+}
+
+.why-feature-copy h2,
+.why-reason.is-active .why-reason-copy > b,
+.principle-copy h2,
+.project-roster-copy > b {
+  color: var(--brand-green-deep);
+}
+
+.why-radar > i,
+.why-reason-signal > i,
+.principle-node,
+.process-node-top > i {
+  background-color: var(--green);
+  box-shadow: 0 0 10px rgba(0, 166, 81, .32);
+}
+
+.partner-layer-heading > span,
+.client-sector-title > span,
+.principle-mark > span,
+.project-roster-icon {
+  background: #e4f3d7;
+  color: var(--brand-green-deep);
+}
+
+.equipment-brand-list > span {
+  border-color: rgba(0, 120, 61, .24);
+  background: linear-gradient(145deg, #fff, #eef7e5);
+}
+
+.distributor-placeholder,
+.client-logo-space {
+  border-color: rgba(0, 120, 61, .22);
+  background: rgba(0, 166, 81, .04);
+}
+
+.principle-card {
+  background: linear-gradient(135deg, #fff, #f0f8e8);
+}
+
+.contact-paper {
+  background:
+    radial-gradient(ellipse at 70% 35%, rgba(0, 166, 81, .19), transparent 48%),
+    linear-gradient(145deg, #0d281b, #101e17 72%);
+}
+
+.contact-orbit {
+  border-color: rgba(0, 207, 92, .58);
+  box-shadow: 0 0 28px rgba(0, 166, 81, .12);
+}
+
+.contact-orbit::before {
+  border-color: rgba(209, 227, 35, .42);
+}
+
+.contact-orbit::after {
+  border-color: rgba(0, 207, 92, .42);
+}
+
+.catalog-link {
+  background: linear-gradient(110deg, #d9ed2b, #a9dc32);
+  box-shadow: 0 7px 20px rgba(164, 208, 34, .2);
+}
+
+.brand-sheet > div {
+  border-color: rgba(0, 207, 92, .3);
+  box-shadow: inset 0 3px rgba(209, 227, 35, .65);
+  background: linear-gradient(145deg, rgba(0, 166, 81, .12), rgba(255, 255, 255, .025));
+}
+
+.brand-sheet b {
+  color: #f6f9ed;
+}
+
+.ict-wave {
+  opacity: .3;
+}
+
+.motif-page .ict-wave {
+  opacity: .22;
+}
+
+.ict-code {
+  color: var(--brand-green-deep);
+  opacity: .5;
+}
+
+.ict-symbol {
+  border-color: rgba(0, 120, 61, .32);
+  background: rgba(243, 250, 236, .86);
+  color: var(--brand-green-deep);
+}
+
+.paper-dark ~ .ict-motif .ict-symbol,
+.motif-cover .ict-symbol {
+  border-color: rgba(209, 227, 35, .6);
+  background: rgba(4, 36, 20, .48);
+  color: var(--lime);
+}
+
+.paper-dark ~ .ict-motif .ict-code,
+.motif-cover .ict-code {
+  color: var(--lime);
+  opacity: .72;
+}
+
+.toc-list > button.toc-active {
+  border-color: rgba(0, 166, 81, .4);
+  background: linear-gradient(100deg, #fff, #eaf6dc);
+}
+
+@media (max-width: 640px) {
+  .paper:not(.cover-paper):not(.paper-dark):not(.contact-paper)::after {
+    border-top-width: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .key-metric,
+  .process-node-card,
+  .catalog-tools > button,
+  .catalog-stage .turn-button {
+    transition-duration: .01ms;
+  }
+}

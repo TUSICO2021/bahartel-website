@@ -1,0 +1,38 @@
+/* Clearer history details and a curved transition between the roadmap rows. */
+@media (min-width: 1025px) {
+  .history-detail ul {
+    grid-auto-rows: max-content;
+    align-content: start;
+  }
+
+  .history-detail li p {
+    color: #203f30;
+    font-size: clamp(15px, 1.32cqw, 19px);
+    font-weight: 700;
+    line-height: 1.7;
+  }
+
+  .history-detail li {
+    min-height: 48px;
+    padding: 9px 11px;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .history-detail li p {
+    color: #203f30;
+    font-size: clamp(12px, 1.45vw, 15px);
+    font-weight: 700;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 640px) {
+  .history-detail li p {
+    color: #203f30;
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.75;
+  }
+}

@@ -1,0 +1,194 @@
+/* Distinct numerals for dates, quantities, and headline metrics. */
+:root {
+  --number-font: 'Yekan Bakh', 'Vazirmatn', Tahoma, sans-serif;
+}
+
+:is(
+  .metric > b,
+  .key-metric-value > b,
+  .history-year > b,
+  .history-detail-head > b,
+  .project-item > b,
+  .project-roster-copy > span strong,
+  .featured-project-number > b,
+  .process-node-top > span,
+  .process-stamp > span,
+  .why-feature-number,
+  .principle-mark > span,
+  .client-sector-title > span,
+  .project-roster-icon > span,
+  .key-values-list > span > i,
+  .history-detail li > span,
+  .featured-project-top > span:last-child,
+  .brand-sheet > div > span,
+  .page-controls > span > b,
+  .page-controls > span > small,
+  .page-meta .folio,
+  .cover-side > span,
+  .contact-address em strong,
+  .contact-channel-link[href^='tel'] b,
+  .contact-final-footer > b
+) {
+  font-family: var(--number-font);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: 'tnum' 1, 'lnum' 1;
+  font-weight: 900;
+}
+
+@media (min-width: 1025px) {
+  .metric > b {
+    font-size: clamp(48px, 4.3cqw, 64px);
+    line-height: 1;
+    letter-spacing: -.045em;
+  }
+
+  .key-metric-value > b {
+    font-size: clamp(42px, 3.85cqw, 57px);
+    line-height: 1;
+    letter-spacing: -.035em;
+  }
+
+  .history-year > b {
+    color: #174a2d;
+    font-size: clamp(20px, 1.55cqw, 23px);
+    line-height: 1.15;
+    letter-spacing: -.04em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+  }
+
+  .history-detail-head > b {
+    font-size: clamp(32px, 2.65cqw, 40px);
+    line-height: 1;
+  }
+
+  .project-item > b {
+    font-size: clamp(32px, 2.7cqw, 40px);
+    line-height: 1;
+  }
+
+  .project-roster-copy > span strong {
+    font-size: clamp(18px, 1.45cqw, 22px);
+  }
+
+  .featured-project-number > b {
+    font-size: clamp(56px, 4.8cqw, 72px);
+    line-height: 1;
+  }
+
+  .process-node-top > span {
+    font-size: clamp(17px, 1.35cqw, 21px);
+  }
+
+  .process-stamp > span {
+    font-size: clamp(100px, 9cqw, 136px);
+  }
+
+  .why-feature-number {
+    font-size: clamp(17px, 1.35cqw, 21px);
+  }
+
+  .principle-mark > span {
+    font-size: clamp(15px, 1.2cqw, 18px);
+  }
+
+  .client-sector-title > span,
+  .key-values-list > span > i,
+  .history-detail li > span {
+    font-size: 13px;
+  }
+
+  .project-roster-icon > span {
+    font-size: 10px;
+  }
+
+  .featured-project-top > span:last-child,
+  .page-meta .folio,
+  .cover-side > span {
+    font-size: 14px;
+  }
+
+  .page-controls > span > b {
+    font-size: 19px;
+  }
+
+  .contact-address em strong,
+  .contact-channel-link[href^='tel'] b {
+    font-size: 16px;
+  }
+
+  .contact-final-footer > b {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .metric > b,
+  .key-metric-value > b {
+    font-size: clamp(30px, 4.2vw, 44px);
+    line-height: 1;
+  }
+
+  .history-year > b {
+    font-size: clamp(16px, 1.9vw, 18px);
+  }
+
+  .history-detail-head > b,
+  .featured-project-number > b {
+    font-size: clamp(27px, 3.2vw, 38px);
+  }
+
+  .project-item > b {
+    font-size: clamp(24px, 3vw, 32px);
+  }
+
+  .process-node-top > span,
+  .principle-mark > span {
+    font-size: 15px;
+  }
+
+  .page-controls > span > b {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .metric > b,
+  .key-metric-value > b {
+    font-size: clamp(31px, 9vw, 42px);
+    line-height: 1;
+  }
+
+  .history-year > b {
+    font-size: clamp(12px, 3.6vw, 15px);
+  }
+
+  .history-detail-head > b,
+  .featured-project-number > b {
+    font-size: clamp(27px, 8vw, 36px);
+  }
+
+  .project-item > b {
+    font-size: clamp(22px, 7vw, 29px);
+  }
+
+  .project-roster-copy > span strong {
+    font-size: 15px;
+  }
+
+  .process-node-top > span,
+  .principle-mark > span,
+  .why-feature-number {
+    font-size: 14px;
+  }
+
+  .client-sector-title > span,
+  .key-values-list > span > i,
+  .history-detail li > span {
+    font-size: 11px;
+  }
+
+  .contact-address em strong,
+  .contact-channel-link[href^='tel'] b {
+    font-size: 12px;
+  }
+}
