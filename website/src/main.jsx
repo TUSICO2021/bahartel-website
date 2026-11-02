@@ -93,7 +93,7 @@ const projects = [
   { id: '01', title: 'تأمین سرورهای سازمانی برای زیرساخت مرکز داده', category: 'بانک / اپراتور مخابراتی ملی', model: 'HP ProLiant G10', metric: { value: '۷۵۵', label: 'دستگاه سرور' }, amount: '— میلیون دلار', delivery: '— ماه', challenge: 'نیاز فنی خاص به کانفیگ سفارشی از کارخانه + محدودیت زمانی سخت برای راه‌اندازی زیرساخت', difference: ['تأمین مستقیم از تولیدکننده', 'اعتبارسنجی کیفی پیش از ترخیص', 'تحویل مستندشده به انبار مشتری'], en: 'DATA CENTER / SERVER', icon: Server },
   { id: '02', title: 'تأمین ۱۸۵ دستگاه سرور HP G10', category: 'سرور سازمانی', model: 'HP ProLiant G10', metric: { value: '۱۸۵', label: 'دستگاه سرور' }, en: 'ENTERPRISE SERVER', icon: Server },
   { id: '03', title: 'تأمین ۸ دستگاه سرور Supermicro ویژهٔ هوش مصنوعی', category: 'زیرساخت هوش مصنوعی', model: 'Supermicro', metric: { value: '۸', label: 'دستگاه سرور' }, en: 'AI COMPUTE', icon: Cpu },
-  { id: '04', title: 'تأمین ۳۰۰ دستگاه سرور Fujitsu PRIMERGY RX2540', category: 'زیرساخت مرکز داده', image: '/assets/projects/fujitsu-supplied.png', model: 'Fujitsu PRIMERGY RX2540', metric: { value: '۳۰۰', label: 'دستگاه سرور' }, amount: 'حدود ۲۵ میلیون یورو', warranty: '۳۶ ماه', aftercare: 'سه سال', summary: 'تأمین و واردات مستقیم ۳۰۰ دستگاه سرور سازمانی فوجیتسو؛ با تمرکز بر دسترسی به تجهیزات تخصصی، مدیریت فرایند تأمین بین‌المللی و پشتیبانی پس از فروش.', en: 'DATA CENTER', icon: Server },
+  { id: '04', title: 'تأمین ۳۰۰ دستگاه سرور Fujitsu PRIMERGY RX۲۵۴۰', category: 'زیرساخت مرکز داده', image: '/assets/projects/fujitsu-supplied.png', model: 'Fujitsu PRIMERGY RX۲۵۴۰', metric: { value: '۳۰۰', label: 'دستگاه سرور' }, amount: 'حدود ۲۵ میلیون یورو', warranty: '۳۶ ماه', aftercare: 'سه سال', summary: 'تأمین و واردات مستقیم ۳۰۰ دستگاه سرور سازمانی فوجیتسو؛ با تمرکز بر دسترسی به تجهیزات تخصصی، مدیریت فرایند تأمین بین‌المللی و پشتیبانی پس از فروش.', en: 'DATA CENTER', icon: Server },
   { id: '05', title: 'تأمین ۳۰ دستگاه سرور HP G10', category: 'سرور سازمانی', model: 'HP ProLiant G10', metric: { value: '۳۰', label: 'دستگاه سرور' }, en: 'ENTERPRISE SERVER', icon: Server },
   { id: '06', title: 'تجهیزات Cisco و Fortinet', category: 'شبکه و امنیت', model: 'Cisco & Fortinet', metric: { value: '۱۸٫۵', label: 'میلیون دلار' }, en: 'NETWORK & SECURITY', icon: Network },
   { id: '07', title: 'تأمین تجهیزات رادیویی و شبکهٔ بی‌سیم برای اپراتورهای مخابراتی', category: 'شبکهٔ مخابراتی', en: 'TELECOM NETWORK', icon: RadioTower },
@@ -469,7 +469,7 @@ function ProjectShowcasePage({ index }) {
             </header>
             <h3 className="fujitsu-project-title">{fujitsuCopy[6]}</h3>
             <div className="fujitsu-project-metrics">{[1, 2, 3, 4].map((index) => {
-              const match = fujitsuCopy[index].match(/300|36|سه|25/);
+              const match = fujitsuCopy[index].match(/۳۰۰|۳۶|سه|۲۵/);
               const offset = match.index;
               return <div className={`fujitsu-metric fujitsu-metric-${index}`} key={index}>
                 <p>{fujitsuCopy[index].slice(0, offset)}<strong>{match[0]}</strong>{fujitsuCopy[index].slice(offset + match[0].length)}</p>

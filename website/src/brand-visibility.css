@@ -72,3 +72,19 @@
 .project-exact-copy.fujitsu-editorial-copy p:last-child { border-right: 3px solid #80ac66; padding: 10px 14px; background: #f3f7ec; border-radius: 6px; }
 .fujitsu-project-model { margin-top: 14px; padding: 12px 15px; border: 1px solid #d9e5db; border-radius: 8px; color: #355d46; background: #ecf2e8; font-size: 13px; white-space: pre-wrap; }
 @media(max-width:640px) { .project-exact-content { padding: 16px; } .fujitsu-project-header { gap: 10px; } .fujitsu-project-header .project-exact-brand { width: 78px; min-height: 70px; } .fujitsu-project-header .project-exact-brand img { width: 60px; } .fujitsu-project-header h2 { font-size: 18px; } .fujitsu-project-title { font-size: 21px; } .fujitsu-metric { padding: 11px; } .fujitsu-metric strong { font-size: 27px; } .fujitsu-editorial-copy { padding: 16px 14px 0; } .project-exact-copy.fujitsu-editorial-copy p { font-size: 15px; line-height: 2.1; } }
+
+/* Match the established dark green project palette. */
+.project-exact-feature { background: linear-gradient(135deg,#184f34,#073c2d 65%,#0a4532); border-color: #567e3b; border-top-color: #c9df31; color: #f4f8ef; }
+.project-exact-content { scrollbar-color: #bad948 #124a34; }
+.fujitsu-project-header { border-bottom-color: #ffffff29; }
+.fujitsu-eyebrow { color: #c3d7be; }
+.fujitsu-project-header h2 { color: #fff; }
+.fujitsu-project-title { color: #d7ea59; }
+.fujitsu-metric { background: #ffffff09; border-color: #ffffff29; border-top-color: #8cba68; box-shadow: 0 5px 12px #001e2217; }
+.fujitsu-metric p { color: #e7f0e0; }
+.fujitsu-metric strong { color: #ddef68; }
+.fujitsu-metric-4 { background: #b8d53915; border-color: #d5e96b66; border-top-color: #d5e96b; }
+.fujitsu-editorial-copy { background: #ffffff07; border-color: #ffffff26; }
+.project-exact-copy.fujitsu-editorial-copy p, .project-exact-copy.fujitsu-editorial-copy p:first-child { color: #f0f5eb; }
+.project-exact-copy.fujitsu-editorial-copy p:last-child { background: #c8de3e0d; border-right-color: #d3e646; }
+.fujitsu-project-model { color: #deebd5; background: #ffffff08; border-color: #ffffff29; }
