@@ -8,3 +8,10 @@
 - [سایت](https://bahartel-website.pages.dev)
 
 سورس، تصاویر، متن‌ها و سند اصلی پروژه فوجیتسو در این شاخه نگهداری می‌شوند. تنظیمات حساب Cloudflare در راهنمای تحویل توضیح داده شده‌اند.
+
+## پاورپوینت کامل و قابل ویرایش
+
+- [دانلود فایل پاورپوینت ۴۳ اسلایدی](https://github.com/TUSICO2021/bahartel-website/raw/refs/heads/import-website-source/deliverables/Bahartel-Complete-Editable.pptx)
+- [دانلود بسته پاورپوینت همراه فونت‌ها](https://github.com/TUSICO2021/bahartel-website/raw/refs/heads/import-website-source/deliverables/Bahartel-PowerPoint-with-Fonts.zip)
+
+متن‌ها و کادرها قابل ویرایش هستند؛ تصاویر و لوگوها مستقل‌اند. برای نمایش دقیق، فونت‌های بسته ZIP را نصب کنید.
