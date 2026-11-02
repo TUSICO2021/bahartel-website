@@ -795,6 +795,14 @@ function App() {
     if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) turn(page + (deltaX < 0 ? 1 : -1));
   };
   const handleWheel = (event) => {
+    // Let the browser scroll the nearest overflowing panel under the pointer.
+    // Retain wheel ownership at both ends so scrolling cannot turn a page.
+    if (event.ctrlKey) return;
+    for (let node = event.target instanceof Element ? event.target : null; node; node = node.parentElement) {
+      const style = getComputedStyle(node);
+      if (['auto', 'scroll', 'overlay'].includes(style.overflowY) && node.scrollHeight > node.clientHeight + 1) return;
+      if (node === event.currentTarget) break;
+    }
     if (event.target instanceof Element && event.target.closest('.history-rail-scroll, .process-flow-stepper, .process-roadmap')) return;
     // A scrollable page keeps vertical wheel input, including at its boundaries.
     // Turning the catalogue remains available through arrows and horizontal swipes.
