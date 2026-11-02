@@ -1,26 +1,10 @@
-# Bahartel company profile
+# بهارتل — راهنمای دسترسی به پروژه
 
-Editable React/Vite source and production output for Bahar Ertebat Gostar.
+**نسخه اصلی و متصل به Cloudflare در شاخه `import-website-source` و پوشه `website` است.**
 
-## Local development
+- [سورس اصلی](https://github.com/TUSICO2021/bahartel-website/tree/import-website-source/website)
+- [راهنمای کامل ادامه کار و تنظیمات انتشار](https://github.com/TUSICO2021/bahartel-website/blob/import-website-source/website/docs/HANDOFF.fa.md)
+- [دانلود تمام فایل‌های شاخه اصلی کار](https://github.com/TUSICO2021/bahartel-website/archive/refs/heads/import-website-source.zip)
+- [سایت](https://bahartel-website.pages.dev)
 
-```sh
-npm ci
-npm run dev
-```
-
-## Cloudflare Pages
-
-- Production branch: `main`
-- Root directory: repository root (leave blank)
-- Build command: `npm run build`
-- Build output directory: `dist`
-
-The tracked `dist/` directory is also available for static deployment without rebuilding.
-The existing ZIP is retained and updated for manual upload workflows.
-
-## Project images
-
-The Fujitsu project photo was supplied by the owner. Its visible RX2450 M2 label
-is inconsistent with the supplied RX2540 project text; owner requested use of
-this image pending model confirmation.
+سورس، تصاویر، متن‌ها و سند اصلی پروژه فوجیتسو در این شاخه نگهداری می‌شوند. تنظیمات حساب Cloudflare در راهنمای تحویل توضیح داده شده‌اند.
