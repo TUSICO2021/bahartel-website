@@ -24,6 +24,7 @@ import './cover-page.css';
 import './story-profile.css';
 import './history-redesign.css';
 import './trust-reasons.css';
+import './brand-visibility.css';
 import './mobile-scroll.css';
 import { PortfolioCore, PortfolioOrbits } from './PortfolioArt.jsx';
 import CoverPage from './CoverPage.jsx';
@@ -91,9 +92,9 @@ const projects = [
   { id: '01', title: 'تأمین سرورهای سازمانی برای زیرساخت مرکز داده', category: 'بانک / اپراتور مخابراتی ملی', model: 'HP ProLiant G10', metric: { value: '۷۵۵', label: 'دستگاه سرور' }, amount: '— میلیون دلار', delivery: '— ماه', challenge: 'نیاز فنی خاص به کانفیگ سفارشی از کارخانه + محدودیت زمانی سخت برای راه‌اندازی زیرساخت', difference: ['تأمین مستقیم از تولیدکننده', 'اعتبارسنجی کیفی پیش از ترخیص', 'تحویل مستندشده به انبار مشتری'], en: 'DATA CENTER / SERVER', icon: Server },
   { id: '02', title: 'تأمین ۱۸۵ دستگاه سرور HP G10', category: 'سرور سازمانی', model: 'HP ProLiant G10', metric: { value: '۱۸۵', label: 'دستگاه سرور' }, en: 'ENTERPRISE SERVER', icon: Server },
   { id: '03', title: 'تأمین ۸ دستگاه سرور Supermicro ویژهٔ هوش مصنوعی', category: 'زیرساخت هوش مصنوعی', model: 'Supermicro', metric: { value: '۸', label: 'دستگاه سرور' }, en: 'AI COMPUTE', icon: Cpu },
-  { id: '04', title: 'تأمین ۳۰۰ دستگاه سرور Fujitsu', category: 'سرور سازمانی', model: 'Fujitsu', metric: { value: '۳۰۰', label: 'دستگاه سرور' }, en: 'DATA CENTER', icon: Server },
+  { id: '04', title: 'تأمین ۳۰۰ دستگاه سرور Fujitsu PRIMERGY RX2540', category: 'زیرساخت مرکز داده', image: '/assets/projects/fujitsu-supplied.png', model: 'Fujitsu PRIMERGY RX2540', metric: { value: '۳۰۰', label: 'دستگاه سرور' }, amount: 'حدود ۲۵ میلیون یورو', warranty: '۳۶ ماه', aftercare: 'سه سال', summary: 'تأمین و واردات مستقیم ۳۰۰ دستگاه سرور سازمانی فوجیتسو؛ با تمرکز بر دسترسی به تجهیزات تخصصی، مدیریت فرایند تأمین بین‌المللی و پشتیبانی پس از فروش.', en: 'DATA CENTER', icon: Server },
   { id: '05', title: 'تأمین ۳۰ دستگاه سرور HP G10', category: 'سرور سازمانی', model: 'HP ProLiant G10', metric: { value: '۳۰', label: 'دستگاه سرور' }, en: 'ENTERPRISE SERVER', icon: Server },
-  { id: '06', title: 'تجهیزات Cisco و Fortinet به ارزش ۱۸٫۵ میلیون دلار', category: 'شبکه و امنیت', model: 'Cisco & Fortinet', metric: { value: '۱۸٫۵', label: 'میلیون دلار' }, en: 'NETWORK & SECURITY', icon: Network },
+  { id: '06', title: 'تجهیزات Cisco و Fortinet', category: 'شبکه و امنیت', model: 'Cisco & Fortinet', metric: { value: '۱۸٫۵', label: 'میلیون دلار' }, en: 'NETWORK & SECURITY', icon: Network },
   { id: '07', title: 'تأمین تجهیزات رادیویی و شبکهٔ بی‌سیم برای اپراتورهای مخابراتی', category: 'شبکهٔ مخابراتی', en: 'TELECOM NETWORK', icon: RadioTower },
   { id: '08', title: 'پروژهٔ ESS و تأمین باتری‌های لیتیومی برای مراکز داده و سایت‌های مخابراتی', category: 'ذخیره‌سازی انرژی', en: 'ENERGY STORAGE', icon: BatteryCharging },
 ];
@@ -452,6 +453,8 @@ function ProjectShowcasePage({ index }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const project = projects[selectedIndex];
   const ProjectIcon = project.icon;
+  const projectBrandIds = { '01': ['hpe'], '02': ['hpe'], '03': ['supermicro'], '04': ['fujitsu'], '05': ['hpe'], '06': ['cisco', 'fortinet'] };
+  const projectBrands = (projectBrandIds[project.id] || []).map(id => ({ id, name: id === 'fujitsu' ? 'Fujitsu' : portfolioBrands.find(brand => brand.id === id)?.name, src: `/assets/brand-logos/${id}.svg` }));
   return <article className="paper project-interaction-paper">
     <PageMeta index={index} label="پروژه‌های موفق" />
     <div className="project-interaction-layout">
@@ -459,13 +462,17 @@ function ProjectShowcasePage({ index }) {
       <div className="project-interaction-grid">
         <article className="project-interaction-feature" key={project.id} aria-live="polite">
           <div className="project-interaction-top"><span>پروژهٔ {project.id} از {pageNumber(projects.length)}</span><span>{project.category}</span></div>
-          <div className="project-interaction-main">
+          <div className={`project-interaction-main ${project.image ? 'has-product-image' : ''}`}>
             <div className="project-interaction-copy"><small>{project.client || project.category}</small><h2>{project.title}</h2>{project.model && <div className="project-interaction-model"><ProjectIcon size={19}/><b>{project.model}</b></div>}</div>
-            <div className="project-interaction-visual" aria-hidden="true"><i className="project-visual-orbit project-visual-orbit-a"/><i className="project-visual-orbit project-visual-orbit-b"/><span><ProjectIcon size={37} strokeWidth={1.45}/></span>{project.metric && <div><b>{project.metric.value}</b><small>{project.metric.label}</small></div>}</div>
+            {project.image ? <figure className="project-product-photo"><img src={project.image} alt="تصویر سرور فوجیتسو ارائه‌شده در فایل پروژه"/><figcaption>{project.metric.value} {project.metric.label}</figcaption></figure> : <div className="project-interaction-visual" aria-hidden="true"><i className="project-visual-orbit project-visual-orbit-a"/><i className="project-visual-orbit project-visual-orbit-b"/><span><ProjectIcon size={37} strokeWidth={1.45}/></span>{project.metric && <div><b>{project.metric.value}</b><small>{project.metric.label}</small></div>}</div>}
           </div>
+          {project.summary && <p className="project-summary">{project.summary}</p>}
+          {projectBrands.length > 0 && <div className="project-brand-strip" aria-label="برندهای تجهیزات پروژه">{projectBrands.map(brand => <div className={`project-brand-badge project-brand-${brand.id}`} key={brand.id}><img src={brand.src} alt={brand.name}/></div>)}</div>}
           <div className="project-interaction-facts">
             {project.model && <div><small>برند و مدل</small><b>{project.model}</b></div>}
             {project.amount && <div><small>ارزش تقریبی</small><b>{project.amount}</b></div>}
+            {project.warranty && <div><small>گارانتی</small><b>{project.warranty}</b></div>}
+            {project.aftercare && <div><small>خدمات پس از فروش</small><b>{project.aftercare}</b></div>}
             {project.delivery && <div><small>بازهٔ تحویل</small><b>{project.delivery}</b></div>}
           </div>
           {project.challenge && <section className="project-interaction-challenge"><b>چالش اصلی</b><p>{project.challenge}</p></section>}
