@@ -36,3 +36,13 @@
 .project-interaction-feature:has(.project-product-photo) .project-brand-badge { width: 73px; height: 42px; padding: 7px; }
 .project-interaction-feature:has(.project-product-photo) .project-interaction-copy { padding-left: 80px; }
 @media (max-width: 640px) { .project-product-photo img { height: 180px; } .project-interaction-feature:has(.project-product-photo) .project-interaction-copy h2 { font-size: 17px; } }
+
+.project-exact-feature { padding: 0; overflow: hidden; }
+.project-exact-content { min-height: 0; height: 100%; overflow-y: auto; overscroll-behavior: contain; padding: 18px 22px; scrollbar-width: thin; scrollbar-color: #b7d653 #174b35; }
+.project-exact-brand { display: flex; justify-content: flex-start; margin-bottom: 12px; }
+.project-exact-brand img { width: 100px; height: 46px; object-fit: contain; background: #fff; padding: 8px; border-radius: 8px; }
+.project-exact-copy p { margin: 0 0 16px; color: #f5f9ef; font-size: 14px; line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+.project-exact-copy p:first-child { font-size: 21px; font-weight: 900; }
+.project-exact-copy strong { color: #d9ec64; font-weight: 900; }
+.project-exact-content .project-product-photo { margin-bottom: 18px; }
+@media (max-width: 640px) { .project-exact-content { max-height: 76svh; padding: 16px; } .project-exact-copy p { font-size: 14px; } }

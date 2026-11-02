@@ -25,6 +25,7 @@ import './story-profile.css';
 import './history-redesign.css';
 import './trust-reasons.css';
 import './brand-visibility.css';
+import fujitsuCopy from './fujitsu-copy.json';
 import './mobile-scroll.css';
 import { PortfolioCore, PortfolioOrbits } from './PortfolioArt.jsx';
 import CoverPage from './CoverPage.jsx';
@@ -460,7 +461,12 @@ function ProjectShowcasePage({ index }) {
     <div className="project-interaction-layout">
       <header className="project-interaction-heading"><h1>پروژه‌های <em>موفق</em></h1></header>
       <div className="project-interaction-grid">
-        <article className="project-interaction-feature" key={project.id} aria-live="polite">
+        <article className={`project-interaction-feature ${project.id === '04' ? 'project-exact-feature' : ''}`} key={project.id} aria-live="polite">
+          {project.id === '04' ? <section className="project-exact-content" aria-label="متن پروژه فوجیتسو" tabIndex={0}>
+            <div className="project-exact-brand"><img src="/assets/brand-logos/fujitsu.svg" alt="Fujitsu"/></div>
+            {project.image && <figure className="project-product-photo"><img src={project.image} alt="تصویر سرور فوجیتسو ارائه‌شده در فایل پروژه"/></figure>}
+            <div className="project-exact-copy">{fujitsuCopy.map((paragraph, i) => i === 7 ? <p key={i}><strong>{paragraph}</strong></p> : <p key={i}>{paragraph}</p>)}</div>
+          </section> : <>
           <div className="project-interaction-top"><span>پروژهٔ {project.id} از {pageNumber(projects.length)}</span><span>{project.category}</span></div>
           <div className={`project-interaction-main ${project.image ? 'has-product-image' : ''}`}>
             <div className="project-interaction-copy"><small>{project.client || project.category}</small><h2>{project.title}</h2>{project.model && <div className="project-interaction-model"><ProjectIcon size={19}/><b>{project.model}</b></div>}</div>
@@ -477,6 +483,7 @@ function ProjectShowcasePage({ index }) {
           </div>
           {project.challenge && <section className="project-interaction-challenge"><b>چالش اصلی</b><p>{project.challenge}</p></section>}
           {project.difference && <section className="project-interaction-difference"><b>آنچه تفاوت ایجاد کرد</b><div>{project.difference.map((item) => <span key={item}>{item}</span>)}</div></section>}
+          </>}
         </article>
         <section className="project-interaction-roster" aria-label="پروژه‌ها">
           <div className="project-interaction-cards">{projects.map((item) => {
