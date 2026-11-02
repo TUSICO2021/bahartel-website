@@ -465,7 +465,7 @@ function ProjectShowcasePage({ index }) {
           {project.id === '04' ? <section className="project-exact-content" aria-label="متن پروژه فوجیتسو" tabIndex={0}>
             <div className="project-exact-brand"><img src="/assets/brand-logos/fujitsu.svg" alt="Fujitsu"/></div>
             {project.image && <figure className="project-product-photo"><img src={project.image} alt="تصویر سرور فوجیتسو ارائه‌شده در فایل پروژه"/></figure>}
-            <div className="project-exact-copy">{fujitsuCopy.map((paragraph, i) => i === 7 ? <p key={i}><strong>{paragraph}</strong></p> : <p key={i}>{paragraph}</p>)}</div>
+            <div className="project-exact-copy">{fujitsuCopy.map((paragraph, i) => i === 6 ? <p key={i}><strong>{paragraph}</strong></p> : <p key={i}>{paragraph}</p>)}</div>
           </section> : <>
           <div className="project-interaction-top"><span>پروژهٔ {project.id} از {pageNumber(projects.length)}</span><span>{project.category}</span></div>
           <div className={`project-interaction-main ${project.image ? 'has-product-image' : ''}`}>
