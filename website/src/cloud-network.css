@@ -50,3 +50,44 @@
  .cloud-mci-logo { width: 32px; height: 32px; }
  .cloud-bahar-logo { width: 26px; height: 26px; }
 }
+
+/* Stagger each whole card, including its authentic supplied logo. */
+.cloud-node-surface { animation: ecosystem-arrive .75s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--cloud-delay); }
+.cloud-node { width: clamp(100px,14cqw,155px); }
+.cloud-node-surface { padding: 12px 8px; }
+.cloud-node-copy h2 { font-size: clamp(12px,1.4cqw,17px); }
+.cloud-node-mci { width: clamp(175px,22cqw,245px); }
+.cloud-node-mci h2 { font-size: clamp(22px,2.7cqw,32px); }
+.cloud-node-featured { width: clamp(155px,21cqw,235px); }
+.cloud-node-featured h2 { font-size: clamp(14px,1.8cqw,21px); }
+@keyframes ecosystem-arrive { from { opacity: 0; transform: translateY(16px) scale(.88); filter: blur(5px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@media(max-width:1100px) {
+ .paper.cloud-network-paper { min-height: 0; height: auto; overflow: visible; }
+ .cloud-network-layout { position: relative; inset: auto; margin: 30px 22px; }
+ .cloud-network-canvas { height: auto; min-height: 0; flex: none; container-type: normal; }
+ .cloud-network-nodes { position: relative; inset: auto; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 19px 14px; padding: 18px 0 28px; align-items: center; }
+ .cloud-node { position: relative; left: auto; top: auto; width: 100%; max-width: none; transform: none; margin: 0; }
+ .cloud-node-surface { min-height: 68px; display: grid; align-content: center; padding: 12px 7px; }
+ .cloud-node-copy h2 { font-size: 15px; overflow-wrap: anywhere; }
+ .cloud-node-mci { grid-column: 1/-1; width: 230px; justify-self: center; margin-bottom: 12px; }
+ .cloud-node-mci .cloud-node-surface { min-height: 100px; }
+ .cloud-node-mci h2 { font-size: 28px; }
+ .cloud-node-featured { width: 100%; }
+ .cloud-node-featured h2 { font-size: 15px; }
+ .cloud-node-copy>span { white-space: normal; font-size: 5px; }
+ .cloud-node:not(.cloud-node-mci):nth-child(3n) { transform: translateY(8px); }
+}
+@media(max-width:640px) {
+ .cloud-network-layout { margin: 24px 16px; gap: 12px; }
+ .cloud-network-heading h1 { font-size: clamp(23px,6.5vw,30px); }
+ .cloud-network-nodes { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 12px; }
+ .cloud-node-copy h2 { font-size: 14px; }
+ .cloud-node-mci { width: min(230px,90%); }
+ .cloud-node-mci h2 { font-size: 26px; }
+ .cloud-node-featured h2 { font-size: 13px; }
+ .cloud-node-surface { border-radius: 14px; }
+ .cloud-node-featured .cloud-node-content { gap: 6px; }
+}
+@media(prefers-reduced-motion:reduce) { .cloud-node-surface { animation: none; } }
+
+@media(min-width:901px) and (max-width:1100px) and (min-height:601px) { .paper.cloud-network-paper { height: 100%; overflow-y: auto; } }
