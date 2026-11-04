@@ -1,0 +1,137 @@
+{
+  "pages": 24,
+  "sizeCm": [
+    29.7,
+    21
+  ],
+  "palette": [
+    "#274A44",
+    "#0D382F",
+    "#A6CE39",
+    "#EDEBDD",
+    "#FFFFFF"
+  ],
+  "source": "Source-Content-v4.docx",
+  "sections": [
+    {
+      "page": 1,
+      "title": "",
+      "facingPair": ""
+    },
+    {
+      "page": 2,
+      "title": "",
+      "facingPair": ""
+    },
+    {
+      "page": 3,
+      "title": "پیام مدیرعامل",
+      "facingPair": ""
+    },
+    {
+      "page": 4,
+      "title": "داستان بهار ارتباط گستر",
+      "facingPair": "story"
+    },
+    {
+      "page": 5,
+      "title": "داستان بهار ارتباط گستر",
+      "facingPair": "story"
+    },
+    {
+      "page": 6,
+      "title": "آمار کلیدی در یک نگاه",
+      "facingPair": "metrics"
+    },
+    {
+      "page": 7,
+      "title": "آمار کلیدی در یک نگاه",
+      "facingPair": "metrics"
+    },
+    {
+      "page": 8,
+      "title": "دغدغه‌هایی که برطرف می‌کنیم",
+      "facingPair": ""
+    },
+    {
+      "page": 9,
+      "title": "چهار اصل که ما را متمایز می‌کند:",
+      "facingPair": ""
+    },
+    {
+      "page": 10,
+      "title": "مسیری  که در تامین تجهیزات بهارتل با شما همراه می شود",
+      "facingPair": "supply"
+    },
+    {
+      "page": 11,
+      "title": "مسیری  که در تامین تجهیزات بهارتل با شما همراه می شود",
+      "facingPair": "supply"
+    },
+    {
+      "page": 12,
+      "title": "انچه که بهارتل به آن افتخار میکند",
+      "facingPair": "pride"
+    },
+    {
+      "page": 13,
+      "title": "انچه که بهارتل به آن افتخار میکند",
+      "facingPair": "pride"
+    },
+    {
+      "page": 14,
+      "title": "پروژه های موفق (درحال تکمیل است)",
+      "facingPair": "projects"
+    },
+    {
+      "page": 15,
+      "title": "Fujitsu PRIMERGY RX2540",
+      "facingPair": "projects"
+    },
+    {
+      "page": 16,
+      "title": "",
+      "facingPair": "portfolio"
+    },
+    {
+      "page": 17,
+      "title": "",
+      "facingPair": "portfolio"
+    },
+    {
+      "page": 18,
+      "title": "چرا مشتریان بهار ارتباط گستر را انتخاب کرده اند",
+      "facingPair": "choice"
+    },
+    {
+      "page": 19,
+      "title": "چرا مشتریان بهار ارتباط گستر را انتخاب کرده اند",
+      "facingPair": "choice"
+    },
+    {
+      "page": 20,
+      "title": "شبکه همکاران",
+      "facingPair": "partners"
+    },
+    {
+      "page": 21,
+      "title": "شبکه همکاران",
+      "facingPair": "partners"
+    },
+    {
+      "page": 22,
+      "title": "تجارب، مشتریان  (Success Stories & Clients)",
+      "facingPair": ""
+    },
+    {
+      "page": 23,
+      "title": "تماس و شبکه‌های ارتباطی",
+      "facingPair": ""
+    },
+    {
+      "page": 24,
+      "title": "",
+      "facingPair": ""
+    }
+  ]
+}

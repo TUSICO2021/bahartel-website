@@ -23,3 +23,11 @@
 - [راهنمای صفحه‌بندی و ویرایش](deliverables/A4-Moodboard-2026-11-04/README.fa.txt)
 
 این خروجی بر اساس مودبرد و پالت جدید تأییدشده طراحی شده و جایگزین سورس سایت نیست. اعداد هر بخش طبق ورد و تأیید کاربر حفظ شده‌اند.
+
+## بازطراحی گرافیکی پروفایل A4 — ۲۴ صفحه
+
+- [پاورپوینت بازطراحی‌شده](https://raw.githubusercontent.com/TUSICO2021/bahartel-website/import-website-source/deliverables/A4-ArtDirected-2026-11-04/Bahartel-A4-ArtDirected-24p.pptx)
+- [بسته کامل، فونت‌ها و تصاویر منبع](https://raw.githubusercontent.com/TUSICO2021/bahartel-website/import-website-source/deliverables/A4-ArtDirected-2026-11-04/Bahartel-ArtDirected-Complete-Package.zip)
+- [پیش‌نمایش ۲۴ صفحه](deliverables/A4-ArtDirected-2026-11-04/Preview-24-Pages.png)
+
+نسخه تازه با تصویرسازی مفهومی اختصاصی، ترکیب‌بندی و تایپوگرافی جدید، بدون تغییر محتوای تجاری تأییدشده. تصاویر مفهومی به‌عنوان عکس پروژه واقعی معرفی نشده‌اند.
