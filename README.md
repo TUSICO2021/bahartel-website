@@ -15,3 +15,11 @@
 - [دانلود بسته پاورپوینت همراه فونت‌ها](https://github.com/TUSICO2021/bahartel-website/raw/refs/heads/import-website-source/deliverables/Bahartel-PowerPoint-with-Fonts.zip)
 
 متن‌ها و کادرها قابل ویرایش هستند؛ تصاویر و لوگوها مستقل‌اند. برای نمایش دقیق، فونت‌های بسته ZIP را نصب کنید.
+
+## طراحی جدید A4 افقی از ورد نسخه ۴ — ۲۴ صفحه با جلد
+
+- [دانلود پاورپوینت طراحی جدید](https://raw.githubusercontent.com/TUSICO2021/bahartel-website/import-website-source/deliverables/A4-Moodboard-2026-11-04/Bahartel-A4-Moodboard-Editable.pptx)
+- [بسته کامل شامل فونت‌ها و ورد اصلی](https://raw.githubusercontent.com/TUSICO2021/bahartel-website/import-website-source/deliverables/A4-Moodboard-2026-11-04/Bahartel-A4-Complete-Package.zip)
+- [راهنمای صفحه‌بندی و ویرایش](deliverables/A4-Moodboard-2026-11-04/README.fa.txt)
+
+این خروجی بر اساس مودبرد و پالت جدید تأییدشده طراحی شده و جایگزین سورس سایت نیست. اعداد هر بخش طبق ورد و تأیید کاربر حفظ شده‌اند.

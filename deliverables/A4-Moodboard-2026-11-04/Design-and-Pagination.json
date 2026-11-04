@@ -1,0 +1,161 @@
+{
+  "pageCount": 24,
+  "orientation": "landscape",
+  "sizeCm": [
+    29.7,
+    21
+  ],
+  "palette": [
+    "#274A44",
+    "#0D382F",
+    "#A6CE39",
+    "#EDEBDD",
+    "#FFFFFF"
+  ],
+  "pages": [
+    {
+      "number": 1,
+      "title": "",
+      "section": "جلد",
+      "spread": ""
+    },
+    {
+      "number": 2,
+      "title": "",
+      "section": "Cover & Opening Hook",
+      "spread": ""
+    },
+    {
+      "number": 3,
+      "title": "صفحه اول: پیام کوتاه مدیرعامل",
+      "section": "پیام مدیرعامل",
+      "spread": ""
+    },
+    {
+      "number": 4,
+      "title": "داستان بهار ارتباط گستر",
+      "section": "داستان بهار ارتباط گستر",
+      "spread": "story"
+    },
+    {
+      "number": 5,
+      "title": "داستان بهار ارتباط گستر",
+      "section": "تاریخچه شرکت، تصویر اصلی ورد",
+      "spread": "story"
+    },
+    {
+      "number": 6,
+      "title": "آمار کلیدی در یک نگاه",
+      "section": "آمار کلیدی",
+      "spread": "metrics"
+    },
+    {
+      "number": 7,
+      "title": "آمار کلیدی در یک نگاه",
+      "section": "آمار کلیدی",
+      "spread": "metrics"
+    },
+    {
+      "number": 8,
+      "title": "دغدغه‌هایی که برطرف می‌کنیم",
+      "section": "دغدغه‌ها",
+      "spread": ""
+    },
+    {
+      "number": 9,
+      "title": "چهار اصل که ما را متمایز می‌کند:",
+      "section": "اصول همکاری",
+      "spread": ""
+    },
+    {
+      "number": 10,
+      "title": "مسیری  که در تامین تجهیزات بهارتل با شما همراه می شود",
+      "section": "مسیر تأمین تجهیزات",
+      "spread": "supply"
+    },
+    {
+      "number": 11,
+      "title": "مسیری  که در تامین تجهیزات بهارتل با شما همراه می شود",
+      "section": "مسیر تأمین تجهیزات",
+      "spread": "supply"
+    },
+    {
+      "number": 12,
+      "title": "انچه که بهارتل به آن افتخار میکند",
+      "section": "نمونه کارت پروژه",
+      "spread": "pride"
+    },
+    {
+      "number": 13,
+      "title": "انچه که بهارتل به آن افتخار میکند",
+      "section": "نمونه کارت پروژه",
+      "spread": "pride"
+    },
+    {
+      "number": 14,
+      "title": "پروژه های موفق (درحال تکمیل است)",
+      "section": "پروژه‌های موفق",
+      "spread": "projects"
+    },
+    {
+      "number": 15,
+      "title": "Fujitsu PRIMERGY RX2540",
+      "section": "پروژه‌های موفق، فوجیتسو",
+      "spread": "projects"
+    },
+    {
+      "number": 16,
+      "title": "ماتریس سبد محصولات و خدمات (Solutions & Portfolio)",
+      "section": "سبد محصولات و خدمات",
+      "spread": "portfolio"
+    },
+    {
+      "number": 17,
+      "title": "ماتریس سبد محصولات و خدمات (Solutions & Portfolio)",
+      "section": "سبد محصولات و خدمات",
+      "spread": "portfolio"
+    },
+    {
+      "number": 18,
+      "title": "چرا مشتریان بهار ارتباط گستر را انتخاب کرده اند.",
+      "section": "دلایل انتخاب بهارتل",
+      "spread": "choice"
+    },
+    {
+      "number": 19,
+      "title": "چرا مشتریان بهار ارتباط گستر را انتخاب کرده اند.",
+      "section": "دلایل انتخاب بهارتل",
+      "spread": "choice"
+    },
+    {
+      "number": 20,
+      "title": "شرکت های همکار در دو لایه مرکزی  برند تجهیزات اکتیو و main distributers",
+      "section": "شبکه شرکت‌های همکار",
+      "spread": "partners"
+    },
+    {
+      "number": 21,
+      "title": "شرکت های همکار در دو لایه مرکزی  برند تجهیزات اکتیو و main distributers",
+      "section": "توزیع‌کنندگان اصلی",
+      "spread": "partners"
+    },
+    {
+      "number": 22,
+      "title": "تجارب، مشتریان  (Success Stories & Clients)",
+      "section": "تجارب و مشتریان",
+      "spread": ""
+    },
+    {
+      "number": 23,
+      "title": "تماس و شبکه‌های ارتباطی (Call to Action & Contacts)",
+      "section": "تماس و شبکه‌های ارتباطی",
+      "spread": ""
+    },
+    {
+      "number": 24,
+      "title": "",
+      "section": "پشت جلد",
+      "spread": ""
+    }
+  ]
+}
